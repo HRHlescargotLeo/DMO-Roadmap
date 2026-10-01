@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Debt Management Office – website improvement prototypes</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="hub">
+  <!-- @@include header.html -->
+  <!-- Landing page for the prototype pack -->
+  <div class="hub-hero">
+    <div class="container">
+      <div class="hub-brand">
+        <span class="wf-placeholder logo">DMO logo</span>
+        <span class="hub-by">Prepared by ClerksWell</span>
+      </div>
+      <h1>Five ideas for dmo.gov.uk</h1>
+      <p class="lead">Clickable prototypes of five improvements to the UK Debt Management Office website, one for each of its main audiences. They follow GOV.UK Design System patterns and aim at WCAG 2.2 AA. This round is in greyscale, so the conversation stays on structure and content rather than colour.</p>
+      <div class="wf-hub-meta">
+        <span>Version 1</span>
+        <span>1 October 2026</span>
+        <span>Greyscale prototypes</span>
+        <span>Sample data</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <div class="container">
+
+      <!-- The five prototypes -->
+      <section aria-labelledby="protos-title">
+        <h2 class="hub-h2" id="protos-title">The prototypes</h2>
+        <ol class="proto-list">
+          <li class="proto-card">
+            <a class="proto-thumb" href="~/pages/gilts-in-issue.html" tabindex="-1" aria-hidden="true"><span class="wf-placeholder">Gilt market data</span></a>
+            <div class="proto-body">
+              <span class="proto-num">1</span>
+              <h3><a href="~/pages/gilts-in-issue.html">Gilt market data on the page</a></h3>
+              <p>Gilts in issue as a table you can filter, sort and search, for any date, with an as-at stamp, a chart and open-format downloads. A <a href="~/pages/data-catalogue.html">data catalogue</a> lists every dataset and the API.</p>
+              <p class="proto-try"><strong>Try:</strong> show index-linked gilts only, then change the date to 3 May 2025.</p>
+              <a class="btn" href="~/pages/gilts-in-issue.html">Open prototype</a>
+            </div>
+          </li>
+          <li class="proto-card">
+            <a class="proto-thumb" href="~/pages/gilt-operation.html" tabindex="-1" aria-hidden="true"><span class="wf-placeholder">Gilt operations</span></a>
+            <div class="proto-body">
+              <span class="proto-num">2</span>
+              <h3><a href="~/pages/gilt-operation.html">A gilt operation, from notice to result</a></h3>
+              <p>One page per auction, syndication or tender with the result in HTML and the documents attached, an <a href="~/pages/operations-calendar.html">operations calendar</a> people can subscribe to, and <a href="~/pages/alerts.html">email alerts</a>.</p>
+              <p class="proto-try"><strong>Try:</strong> open the calendar, include September's results, then sign up for alerts.</p>
+              <a class="btn" href="~/pages/gilt-operation.html">Open prototype</a>
+            </div>
+          </li>
+          <li class="proto-card">
+            <a class="proto-thumb" href="~/pages/remit.html" tabindex="-1" aria-hidden="true"><span class="wf-placeholder">Remit at a glance</span></a>
+            <div class="proto-body">
+              <span class="proto-num">3</span>
+              <h3><a href="~/pages/remit.html">The remit at a glance</a></h3>
+              <p>The 2026-27 remit and progress against it, on the Remit page and on a reworked <a href="~/pages/home.html">homepage</a> with headline figures, the next operations and links grouped by audience.</p>
+              <p class="proto-try"><strong>Try:</strong> open the homepage and follow the next operation.</p>
+              <a class="btn" href="~/pages/remit.html">Open prototype</a>
+            </div>
+          </li>
+          <li class="proto-card">
+            <a class="proto-thumb" href="~/pages/buying-gilts.html" tabindex="-1" aria-hidden="true"><span class="wf-placeholder">Buying gilts</span></a>
+            <div class="proto-body">
+              <span class="proto-num">4</span>
+              <h3><a href="~/pages/buying-gilts.html">Buying gilts as an individual</a></h3>
+              <p>A step-by-step guide in place of the retail Q&amp;A, an <a href="~/pages/check-eligibility.html">eligibility check</a> for the Purchase and Sale Service, and a <a href="~/pages/gilt-value.html">tool to value a holding</a>.</p>
+              <p class="proto-try"><strong>Try:</strong> run the eligibility check as someone who wants to buy but isn't in the Approved Group.</p>
+              <a class="btn" href="~/pages/buying-gilts.html">Open prototype</a>
+            </div>
+          </li>
+          <li class="proto-card">
+            <a class="proto-thumb" href="~/pages/pwlb-rates.html" tabindex="-1" aria-hidden="true"><span class="wf-placeholder">PWLB rates</span></a>
+            <div class="proto-body">
+              <span class="proto-num">5</span>
+              <h3><a href="~/pages/pwlb-rates.html">PWLB rates and borrowing</a></h3>
+              <p>Today's PWLB rates on the page with the time they were set, a repayment estimator, and a step-by-step <a href="~/pages/pwlb-apply.html">"Apply for a loan"</a> page with one stable link to the form.</p>
+              <p class="proto-try"><strong>Try:</strong> switch to EIP loans, then estimate a £5 million, 25-year EIP loan.</p>
+              <a class="btn" href="~/pages/pwlb-rates.html">Open prototype</a>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Review guidance -->
+      <section class="hub-notes" aria-labelledby="review-title">
+        <div>
+          <h2 class="hub-h2" id="review-title">How to review</h2>
+          <ul>
+            <li>Everything interactive works: filters, sorting, the date input and its error messages, the calendar subscription, the alerts sign-up, the eligibility questions and both calculators. Links to pages outside these prototypes go nowhere by design.</li>
+            <li>Use the bar at the top to move between prototypes. Switch <strong>Notes on</strong> (top right) to see what each prototype proposes and why, plus notes on behaviour (yellow) and open questions for the DMO (red). Notes start switched off.</li>
+            <li>Gilt names, operation dates and the 2026-27 remit are real. Amounts in issue, ISINs, prices, auction results, sales to date and PWLB rates are sample figures, marked "sample" wherever they appear.</li>
+            <li>Every page is built on GOV.UK patterns: underlined links, a strong focus state, error summaries, date inputs, tables with proper headers, and one question per page where we ask for input. Try them with a keyboard.</li>
+            <li>Works on a phone: open this page on your mobile to check the layouts.</li>
+          </ul>
+        </div>
+        <div class="panel surface">
+          <h2 class="hub-h2">Also in this pack</h2>
+          <ul class="hub-links">
+            <li><a href="~/pages/home.html">Homepage</a><span>Part of prototype 3</span></li>
+            <li><a href="~/pages/data-catalogue.html">Data catalogue</a><span>Part of prototype 1</span></li>
+            <li><a href="~/pages/operations-calendar.html">Operations calendar</a><span>Part of prototype 2</span></li>
+            <li><a href="~/pages/alerts.html">Email alerts sign-up</a><span>Part of prototype 2</span></li>
+            <li><a href="~/pages/check-eligibility.html">Eligibility check</a><span>Part of prototype 4</span></li>
+            <li><a href="~/pages/gilt-value.html">What is my gilt worth?</a><span>Part of prototype 4</span></li>
+            <li><a href="~/pages/pwlb-apply.html">Apply for a PWLB loan</a><span>Part of prototype 5</span></li>
+            <li><a href="~/modules/library.html">Module library</a><span>The GOV.UK-pattern components, each shown once</span></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

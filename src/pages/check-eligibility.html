@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check if you can use the Purchase and Sale Service – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 4 of 5 · Buying gilts · Eligibility check</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Three to five questions, one per page, that tell someone whether they can use the Purchase and Sale Service and what to do next. People who can't are pointed to a broker or their bank, rather than finding out from a returned form.</p></div>
+          <div><h2>Why</h2><p>The rules are all on the site, but scattered through the Q&amp;A: live in the UK, be in the Approved Group to buy (not to sell), don't hold in CREST, pay electronically above £1,000, get the form in by 10am. Someone has to read the whole page to assemble them. The Q&amp;A also notes that an unclear or incomplete form is rejected and sent back, which a check like this should make less likely.</p></div>
+        </div>
+        <p class="proposal-foot">Try answering "No" to the first question, or say you want to sell.</p>
+      </div>
+    </aside>
+
+    <div class="container" id="elig-app">
+      <a class="back-link" href="~/pages/buying-gilts.html">Back to buying gilts</a>
+      <span class="caption">Purchase and Sale Service</span>
+
+      <!-- Question pages (R42) -->
+      <section class="q-panel question" id="q-uk" data-error="Select yes if you live in the UK" aria-label="Question">
+        <div class="error-summary" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+        <form novalidate>
+          <p class="q-progress"></p>
+          <div class="field">
+            <fieldset>
+              <legend><h1>Do you live in the UK?</h1></legend>
+              <div class="radios">
+                <label class="radio"><input type="radio" name="uk" id="uk-yes" value="yes"> Yes</label>
+                <label class="radio"><input type="radio" name="uk" value="no"> No</label>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="btn">Continue</button>
+        </form>
+      </section>
+
+      <section class="q-panel question" id="q-what" data-error="Select whether you want to buy or sell gilts" aria-label="Question" hidden>
+        <a class="back-link" href="#" data-elig-back>Back</a>
+        <div class="error-summary" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+        <form novalidate>
+          <p class="q-progress"></p>
+          <div class="field">
+            <fieldset>
+              <legend><h1>Do you want to buy or sell gilts?</h1></legend>
+              <div class="radios">
+                <label class="radio"><input type="radio" name="what" id="what-buy" value="buy"><span>Buy<span class="hint">Or buy and sell</span></span></label>
+                <label class="radio"><input type="radio" name="what" value="sell"><span>Sell only<span class="hint">Gilts you already hold</span></span></label>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="btn">Continue</button>
+        </form>
+      </section>
+
+      <section class="q-panel question" id="q-group" data-error="Select yes if you are in the Approved Group" aria-label="Question" hidden>
+        <a class="back-link" href="#" data-elig-back>Back</a>
+        <div class="error-summary" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+        <form novalidate>
+          <p class="q-progress"></p>
+          <div class="field">
+            <fieldset aria-describedby="group-hint">
+              <legend><h1>Are you a member of the DMO's Approved Group?</h1></legend>
+              <p class="field-hint" id="group-hint">You'll have had a letter confirming it. Joining is free and involves checks on your identity and where your money comes from.</p>
+              <div class="radios">
+                <label class="radio"><input type="radio" name="group" id="group-yes" value="yes"> Yes</label>
+                <label class="radio"><input type="radio" name="group" value="no"> No</label>
+                <label class="radio"><input type="radio" name="group" value="unsure"> I'm not sure</label>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="btn">Continue</button>
+        </form>
+      </section>
+
+      <section class="q-panel question" id="q-crest" data-error="Select yes if you hold your gilts in CREST" aria-label="Question" hidden>
+        <a class="back-link" href="#" data-elig-back>Back</a>
+        <div class="error-summary" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+        <form novalidate>
+          <p class="q-progress"></p>
+          <div class="field">
+            <fieldset aria-describedby="crest-hint">
+              <legend><h1>Do you hold your gilts electronically in CREST, or want to?</h1></legend>
+              <p class="field-hint" id="crest-hint">CREST is the electronic settlement system. If you have a paper gilt certificate, the answer is no.</p>
+              <div class="radios">
+                <label class="radio"><input type="radio" name="crest" id="crest-no" value="no"> No, I have or want certificates</label>
+                <label class="radio"><input type="radio" name="crest" value="yes"> Yes, in CREST</label>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="btn">Continue</button>
+        </form>
+      </section>
+
+      <section class="q-panel question" id="q-amount" data-error="Select how much you plan to invest on one day" aria-label="Question" hidden>
+        <a class="back-link" href="#" data-elig-back>Back</a>
+        <div class="error-summary" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+        <form novalidate>
+          <p class="q-progress"></p>
+          <div class="field">
+            <fieldset>
+              <legend><h1>How much do you plan to invest on any one day?</h1></legend>
+              <div class="radios">
+                <label class="radio"><input type="radio" name="amount" id="amount-under" value="under"> £1,000 or less</label>
+                <label class="radio"><input type="radio" name="amount" value="over"> More than £1,000</label>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="btn">Continue</button>
+        </form>
+      </section>
+
+      <!-- Outcomes (R42) -->
+      <section id="elig-outcome" class="question" hidden aria-label="Result">
+        <div data-outcome="buy">
+          <div class="panel-confirm"><h1>You can use the Purchase and Sale Service</h1></div>
+          <h2>What to do next</h2>
+          <ol class="step-by-step">
+            <li><h3>Fill in a Gilt Stock Dealing Form</h3><p>Include your email address and phone number, or the form may be returned.</p></li>
+            <li><h3>Send it to Computershare by 10am</h3><p>By email as a clear scanned PDF, or by post. Forms received by 10am on a dealing day are dealt that day.</p></li>
+            <li data-pay><h3>Pay electronically</h3><p>Because you're investing more than £1,000 on one day, you can't pay by cheque.</p></li>
+          </ol>
+          <p><a class="btn" href="#">Get the dealing form (on the Computershare website)</a></p>
+        </div>
+        <div data-outcome="join" hidden>
+          <div class="panel-confirm"><h1>You need to join the Approved Group first</h1></div>
+          <p>It's free. Once you're a member you can buy through the Purchase and Sale Service.</p>
+          <p data-pay>Because you plan to invest more than £1,000 on one day, you'll need to pay electronically.</p>
+          <p><a class="btn" href="#">Apply to join the Approved Group</a></p>
+          <p>Or buy through a stockbroker or your bank's share-dealing service instead.</p>
+        </div>
+        <div data-outcome="sell" hidden>
+          <div class="panel-confirm"><h1>You can sell through the Purchase and Sale Service</h1></div>
+          <p>You don't need to be in the Approved Group to sell. Send a Gilt Stock Dealing Form with your gilt certificate and any supporting documents, such as proof of identity.</p>
+          <p><a href="~/pages/gilt-value.html">Find out what your gilts are worth</a></p>
+        </div>
+        <div data-outcome="crest" hidden>
+          <div class="panel-confirm no"><h1>You can't use the Purchase and Sale Service</h1></div>
+          <p>The service isn't available for gilts held in CREST. A stockbroker or your bank's share-dealing service can buy and sell them for you.</p>
+        </div>
+        <div data-outcome="not-uk" hidden>
+          <div class="panel-confirm no"><h1>You can't use the Purchase and Sale Service</h1></div>
+          <p>The service is only open to people who live in the UK. A stockbroker that accepts clients where you live can buy and sell gilts for you.</p>
+        </div>
+        <p><a href="#" data-elig-back>Change your last answer</a> · <a href="#" data-elig-restart>Start again</a></p>
+        <div class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Each result is its own page in the build, so it has a URL and shows up in analytics: the number of people told "you can't" is useful evidence in itself.</div>
+      </section>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gilt operations calendar – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Gilt operations · Calendar</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>The issuance calendar as a table on the page, filterable by method and gilt type, with past operations and their results in the same place. Dealers can subscribe to it in Outlook or Google Calendar, and download it as CSV. A banner flags anything live, such as the current consultation.</p></div>
+          <div><h2>Why</h2><p>The Issuance Calendar page says the calendar is published each March and updated quarterly, then links to a report. The consultation on the 7 October tender is currently a line in the homepage news tab. For something with a closing time, that's easy to miss.</p></div>
+        </div>
+        <p class="proposal-foot">Operations up to 7 October are taken from DMO publications. Dates after that are sample and marked as such.</p>
+      </div>
+    </aside>
+
+    <div class="container" id="cal-app">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="~/pages/home.html">Home</a></li>
+          <li class="breadcrumb-item">Gilt operations</li>
+        </ol>
+      </nav>
+      <span class="caption">Gilt operations</span>
+      <h1 class="page-title">Gilt operations calendar</h1>
+      <p class="page-intro">Auctions, syndications and tenders planned for October to December 2026, and results of recent operations.</p>
+
+      <!-- Notification banner (R24) -->
+      <div class="notice" role="region" aria-labelledby="notice-title">
+        <div class="notice-title" id="notice-title">Consultation open</div>
+        <div class="notice-body">
+          <h2>Programmatic gilt tender on Wednesday 7 October</h2>
+          <p>The DMO is seeking views on which conventional gilt to offer. <a href="~/pages/gilt-operation.html?op=op-1007-tender">Read the consultation and how to respond</a>.</p>
+        </div>
+      </div>
+      <div class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The banner appears on the homepage and every gilt operations page while a consultation or market notice is live, and disappears when it closes. Editors set the start and end times.</div>
+
+      <!-- Filters (R22) -->
+      <div class="filter-panel">
+        <div class="field">
+          <label for="cal-method">Method</label>
+          <select id="cal-method">
+            <option value="all">All methods</option>
+            <option value="Auction">Auction</option>
+            <option value="Syndication">Syndication</option>
+            <option value="Tender">Tender</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cal-type">Gilt type</label>
+          <select id="cal-type">
+            <option value="all">All types</option>
+            <option value="conventional">Conventional</option>
+            <option value="index-linked">Index-linked</option>
+            <option value="green">Green</option>
+          </select>
+        </div>
+        <label class="check"><input type="checkbox" id="cal-past"> Include results from September</label>
+      </div>
+
+      <!-- Calendar table (R22, R04) -->
+      <div class="table-tools">
+        <p class="mb-0" id="cal-count" aria-live="polite"></p>
+        <div class="row">
+          <button type="button" class="btn btn-secondary btn-sm" data-modal-open="ical-modal">Subscribe to this calendar</button>
+          <a href="#" class="btn btn-secondary btn-sm" data-toast="Sample: the calendar would download as CSV.">Download CSV</a>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table wide">
+          <caption>Gilt operations, October to December 2026</caption>
+          <thead>
+            <tr><th scope="col">Date</th><th scope="col">Method</th><th scope="col">Gilt</th><th scope="col">Type</th><th scope="col" class="n">Size</th><th scope="col">Status</th></tr>
+          </thead>
+          <tbody id="cal-body"></tbody>
+        </table>
+      </div>
+      <div class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Each row opens that operation's page. Tick "Include results" to see September's operations, which open with their result.</div>
+
+      <aside class="related" aria-labelledby="rel-title">
+        <h2 id="rel-title">Related</h2>
+        <ul>
+          <li><a href="~/pages/alerts.html">Get emails about gilt operations</a></li>
+          <li><a href="~/pages/remit.html">Progress against the 2026-27 remit</a></li>
+          <li><a href="~/pages/data-catalogue.html">Results of gilt operations data</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- Subscribe modal (R22) -->
+    <div class="wf-modal" id="ical-modal" role="dialog" aria-modal="true" aria-labelledby="ical-title">
+      <div class="wf-modal-panel">
+        <button type="button" class="wf-modal-close" aria-label="Close">&times;</button>
+        <h2 id="ical-title">Subscribe to the gilt operations calendar</h2>
+        <p>Add this link to Outlook, Google Calendar or Apple Calendar. Your calendar will update when the DMO changes or adds an operation.</p>
+        <label for="ical-url">Calendar link</label>
+        <div class="copy-row">
+          <input type="text" id="ical-url" value="webcal://www.dmo.gov.uk/calendars/gilt-operations.ics" readonly>
+          <button type="button" class="btn" id="ical-copy">Copy link</button>
+        </div>
+        <details class="details">
+          <summary>How to add a calendar link in Outlook</summary>
+          <div class="details-text">In Outlook, go to Calendar, choose Add calendar, then Subscribe from web, and paste the link.</div>
+        </details>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

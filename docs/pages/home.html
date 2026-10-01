@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Debt Management Office – homepage prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Prototype navigator (replaces the DMO's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="UK DMO prototypes, overview">UK DMO <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/gilts-in-issue.html" data-proto="gilts-in-issue data-catalogue"><span class="n">1</span> Gilt market data</a></li>
+          <li><a href="../pages/gilt-operation.html" data-proto="gilt-operation operations-calendar alerts"><span class="n">2</span> Gilt operations</a></li>
+          <li><a href="../pages/remit.html" data-proto="remit home"><span class="n">3</span> Remit at a glance</a></li>
+          <li><a href="../pages/buying-gilts.html" data-proto="buying-gilts check-eligibility gilt-value"><span class="n">4</span> Buying gilts</a></li>
+          <li><a href="../pages/pwlb-rates.html" data-proto="pwlb-rates pwlb-apply"><span class="n">5</span> PWLB rates</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 3 of 5 · Remit at a glance · Homepage</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A homepage that answers the questions people arrive with: what's the remit, how far through it are we, when is the next operation, and is anything live. Below that, links are grouped by who's asking, investors, local authorities and members of the public, rather than by how the DMO is organised.</p></div>
+          <div><h2>Why</h2><p>Today the homepage opens with "The DMO is an Executive Agency of HM Treasury", in a heading smaller than the paragraph beneath it, followed by news tabs and six cards describing the DMO's responsibilities. It doesn't give a single figure or say when the next auction is. Its page title is "Home", which is what shows in every browser tab and bookmark.</p></div>
+        </div>
+        <p class="proposal-foot">The remit figure is real; sales to date and later operation dates are sample.</p>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Page heading (R03, R33) -->
+      <span class="wf-placeholder logo">DMO logo</span>
+      <h1 class="page-title" style="margin-top:1.25rem">UK Debt Management Office</h1>
+      <p class="page-intro">We manage the government's debt and cash, lend to local authorities and manage certain public sector funds, on behalf of HM Treasury.</p>
+      <form class="row" role="search" action="#" onsubmit="return false">
+        <label class="visually-hidden" for="home-search">Search dmo.gov.uk</label>
+        <input type="search" id="home-search" placeholder="Search dmo.gov.uk" style="max-width:28rem">
+        <button type="submit" class="btn" data-toast="Sample: search results page.">Search</button>
+      </form>
+
+      <!-- Live notice (R24) -->
+      <div class="notice" role="region" aria-labelledby="home-notice" style="margin-top:2rem">
+        <div class="notice-title" id="home-notice">Consultation open</div>
+        <div class="notice-body">
+          <h2>Programmatic gilt tender on Wednesday 7 October</h2>
+          <p>The DMO is seeking views on which conventional gilt to offer. <a href="../pages/gilt-operation.html?op=op-1007-tender">Read the consultation</a>.</p>
+        </div>
+      </div>
+
+      <!-- Headline figures (R33, R30) -->
+      <section aria-labelledby="fig-title">
+        <h2 class="section-h" id="fig-title">2026-27 at a glance</h2>
+        <div class="key-figures">
+          <div><span>Planned gilt sales</span><b>£246.2bn</b><small class="muted">Remit revised 23 April 2026</small></div>
+          <div><span>Sold so far</span><b data-remit-sold>£122.0bn</b><small class="muted">At 30 September 2026 · sample</small></div>
+          <div><span>Gilts in issue</span><b>£[x]bn</b><small class="muted">Nominal, at 30 September 2026 · from the gilts in issue data</small></div>
+          <div><span>PWLB 10-year certainty rate</span><b>5.34%</b><small class="muted">1 October 2026, 9:30am · sample</small></div>
+        </div>
+        <p><a href="../pages/remit.html">Progress against the remit</a></p>
+        <div class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Each figure links to its source page and shows its as-at time. They update from the same data feeds as the tables, so nobody edits the homepage by hand.</div>
+      </section>
+
+      <!-- Next operations strip (R33) -->
+      <section aria-labelledby="ops-title">
+        <h2 class="section-h" id="ops-title">Next gilt operations</h2>
+        <ul class="ops-strip" id="home-ops"></ul>
+        <p><a href="../pages/operations-calendar.html">Full calendar and recent results</a> · <a href="../pages/alerts.html">Get email alerts</a></p>
+      </section>
+
+      <!-- Task links by audience (R33) -->
+      <section aria-labelledby="tasks-title">
+        <h2 class="section-h" id="tasks-title">Find what you need</h2>
+        <div class="task-grid">
+          <div>
+            <h3>Investors and dealers</h3>
+            <ul>
+              <li><a href="../pages/gilts-in-issue.html">Gilts in issue</a></li>
+              <li><a href="../pages/operations-calendar.html">Gilt operations and results</a></li>
+              <li><a href="../pages/data-catalogue.html">Prices, yields and other data</a></li>
+              <li><a href="#">Treasury bills</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Local authorities</h3>
+            <ul>
+              <li><a href="../pages/pwlb-rates.html">Today's PWLB rates</a></li>
+              <li><a href="../pages/pwlb-apply.html">Apply for a PWLB loan</a></li>
+              <li><a href="#">Lending arrangements</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Members of the public</h3>
+            <ul>
+              <li><a href="../pages/buying-gilts.html">Buying and selling gilts</a></li>
+              <li><a href="../pages/gilt-value.html">What is my gilt worth?</a></li>
+              <li><a href="#">What gilts are</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>About the DMO</h3>
+            <ul>
+              <li><a href="../pages/remit.html">The financing remit</a></li>
+              <li><a href="#">Green gilts</a></li>
+              <li><a href="#">Annual report and accounts</a></li>
+              <li><a href="#">Jobs at the DMO</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="wf-note query" data-note="2"><span class="wf-note-label">Question for the DMO</span>Do the site's analytics support these four groups and these top tasks? We've inferred them from the content, not from usage data.</div>
+      </section>
+
+      <!-- Latest publications -->
+      <section aria-labelledby="news-title">
+        <h2 class="section-h" id="news-title">Latest from the DMO</h2>
+        <ul class="cat-list">
+          <li><span class="tag grey">Consultation</span><a href="../pages/gilt-operation.html?op=op-1007-tender">DMO seeks views on the scheduling of a programmatic gilt tender on Wednesday 7 October</a><span class="wf-meta">30 September 2026</span></li>
+          <li><span class="tag grey">Announcement</span><a href="../pages/gilt-operation.html?op=op-1006-il35">Auction of £1,250 million of 1⅛% Index-linked Treasury Gilt 2035</a><span class="wf-meta">29 September 2026</span></li>
+          <li><span class="tag solid">Result</span><a href="../pages/gilt-operation.html?op=op-0929-tg36">Result of the auction of £4,250 million of 4⅞% Treasury Gilt 2036</a><span class="wf-meta">29 September 2026</span></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the DMO's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Greyscale prototypes for discussion · Figures marked "sample" are illustrative, not DMO data</p>
+    </div>
+  </footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/dmo.js"></script>
+
+</body>
+</html>

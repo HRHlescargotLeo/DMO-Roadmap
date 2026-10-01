@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gilts in issue – UK DMO prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Prototype navigator (replaces the DMO's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="UK DMO prototypes, overview">UK DMO <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/gilts-in-issue.html" data-proto="gilts-in-issue data-catalogue"><span class="n">1</span> Gilt market data</a></li>
+          <li><a href="../pages/gilt-operation.html" data-proto="gilt-operation operations-calendar alerts"><span class="n">2</span> Gilt operations</a></li>
+          <li><a href="../pages/remit.html" data-proto="remit home"><span class="n">3</span> Remit at a glance</a></li>
+          <li><a href="../pages/buying-gilts.html" data-proto="buying-gilts check-eligibility gilt-value"><span class="n">4</span> Buying gilts</a></li>
+          <li><a href="../pages/pwlb-rates.html" data-proto="pwlb-rates pwlb-apply"><span class="n">5</span> PWLB rates</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 1 of 5 · Gilt market data</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Put gilts in issue on the page as a table, for whichever date the user picks, with filters for gilt type and maturity, a search by name or ISIN, a simple chart and the downloads underneath. The same template would then carry the other D-code reports, and a data catalogue lists every dataset in one place.</p></div>
+          <div><h2>Why</h2><p>At the moment the Gilts in Issue page is four paragraphs of text with links in them. The report behind it is a date field and three buttons, PDF, Excel and Word, so the figure most people came for never appears on a web page at all. Analysts will still want the spreadsheet, and this keeps it. But a journalist checking one gilt, or a screen reader user, shouldn't need to download a file to read a number. Word is a curious choice for a table of figures, and CSV, which the Help page says the site supports, isn't offered.</p></div>
+        </div>
+        <p class="proposal-foot">Gilt names are real; amounts, ISINs and dates of first issue are sample data. Try a weekend date, or a date with a mistake in it.</p>
+      </div>
+    </aside>
+
+    <div class="container" id="gilts-app">
+
+      <!-- Breadcrumb and page heading (R03) -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="../pages/home.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../pages/data-catalogue.html">Data</a></li>
+          <li class="breadcrumb-item">Gilts in issue</li>
+        </ol>
+      </nav>
+      <span class="caption">Gilt market data</span>
+      <h1 class="page-title">Gilts in issue</h1>
+      <p class="page-intro">Every gilt in issue at close of business on a given working day, with the nominal amount outstanding.</p>
+
+      <!-- As-at stamp (R12) -->
+      <div class="stamp" role="note">
+        <span><b>Data as at:</b> close of business, <span data-asof data-asof-note>30 September 2026</span></span>
+        <span><b>Next update:</b> 1 October 2026, after close of business</span>
+        <span id="gilts-latest" hidden><a href="#" id="gilts-latest-link">Show the latest data</a></span>
+      </div>
+      <div class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The stamp updates with the date chosen below. Dates of first issue and redemption decide which gilts appear, so choosing a date in 2024 drops the gilts first issued since then.</div>
+
+      <!-- Date input with error summary (R13, R02) -->
+      <section aria-labelledby="cob-title">
+        <div class="error-summary" id="cob-errors" tabindex="-1" role="alert" hidden>
+          <h2>There is a problem</h2>
+          <ul></ul>
+        </div>
+        <form id="cob-form" novalidate>
+          <div class="field" id="cob-field">
+            <fieldset role="group" aria-describedby="cob-hint">
+              <legend id="cob-title"><h2 class="section-h mb-0">Show gilts in issue on a different date</h2></legend>
+              <p class="field-hint" id="cob-hint">For example, 27 3 2026. If you choose a weekend or bank holiday you'll see the previous working day.</p>
+              <div class="date-input">
+                <div class="field"><label for="cob-day">Day</label><input type="text" id="cob-day" inputmode="numeric" autocomplete="off" value="30"></div>
+                <div class="field"><label for="cob-month">Month</label><input type="text" id="cob-month" inputmode="numeric" autocomplete="off" value="9"></div>
+                <div class="field yyyy"><label for="cob-year">Year</label><input type="text" id="cob-year" inputmode="numeric" autocomplete="off" value="2026"></div>
+                <button type="submit" class="btn">Show gilts in issue</button>
+              </div>
+            </fieldset>
+          </div>
+        </form>
+        <div class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>The GOV.UK date input replaces the single dd/mm/yyyy field and its pop-up calendar. Errors say what to fix ("Date must include a month") and link from the summary to the field.</div>
+      </section>
+
+      <!-- Filters (R11) -->
+      <section aria-labelledby="filter-title">
+        <h2 class="visually-hidden" id="filter-title">Filter gilts</h2>
+        <div class="filter-panel">
+          <fieldset>
+            <legend>Type</legend>
+            <div class="checks">
+              <label class="check"><input type="checkbox" name="gilt-type" value="conventional" checked> Conventional</label>
+              <label class="check"><input type="checkbox" name="gilt-type" value="index-linked" checked> Index-linked</label>
+              <label class="check"><input type="checkbox" name="gilt-type" value="green" checked> Green</label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="gilts-maturity">Maturity</label>
+            <select id="gilts-maturity">
+              <option value="all">All maturities</option>
+              <option value="short">Short (up to 7 years)</option>
+              <option value="medium">Medium (7 to 15 years)</option>
+              <option value="long">Long (over 15 years)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="gilts-search">Search by name or ISIN</label>
+            <input type="search" id="gilts-search" placeholder="For example, 2036">
+          </div>
+          <div><button type="button" class="btn btn-secondary" id="gilts-clear">Clear filters</button></div>
+        </div>
+      </section>
+
+      <!-- The table (R10, R04) -->
+      <section aria-labelledby="gilts-caption">
+        <div class="table-tools">
+          <p class="mb-0" id="gilts-count" aria-live="polite"></p>
+          <span class="tag sample">Sample figures</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table wide">
+            <caption id="gilts-caption">Gilts in issue at close of business, <span data-asof>30 September 2026</span></caption>
+            <thead>
+              <tr>
+                <th scope="col" data-sort="name"><button type="button" class="sort-btn">Gilt</button></th>
+                <th scope="col" data-sort="isin"><button type="button" class="sort-btn">ISIN</button></th>
+                <th scope="col" data-sort="type"><button type="button" class="sort-btn">Type</button></th>
+                <th scope="col" data-sort="redemption"><button type="button" class="sort-btn">Redemption date</button></th>
+                <th scope="col" data-sort="firstIssue"><button type="button" class="sort-btn">First issued</button></th>
+                <th scope="col" class="n" data-sort="amount"><button type="button" class="sort-btn">Nominal in issue (£ million)</button></th>
+              </tr>
+            </thead>
+            <tbody id="gilts-body"></tbody>
+            <tfoot><tr><th scope="row" colspan="5">Total of gilts shown</th><td class="n" id="gilts-total"></td></tr></tfoot>
+          </table>
+        </div>
+        <div class="wf-note" data-note="3"><span class="wf-note-label">Behaviour</span>Columns sort in both directions. Index-linked amounts would show both nominal and inflation-uplifted figures, as the current report does; we've left the second column out for now.</div>
+      </section>
+
+      <!-- Chart with table alternative (R15) -->
+      <section aria-labelledby="chart-title">
+        <h2 class="section-h" id="chart-title">Nominal in issue by maturity</h2>
+        <p class="muted">For the gilts shown above. The table is the accessible version of this chart.</p>
+        <div class="hbars" id="gilts-chart" aria-hidden="true"></div>
+      </section>
+
+      <!-- Downloads and API (R14, R06) -->
+      <section aria-labelledby="dl-title">
+        <h2 class="section-h" id="dl-title">Download this data</h2>
+        <ul class="downloads">
+          <li><a href="#" data-toast="Sample: gilts in issue would download as CSV.">Gilts in issue, 30 September 2026 (CSV, 4KB)</a></li>
+          <li><a href="#" data-toast="Sample: gilts in issue would download as an OpenDocument spreadsheet.">Gilts in issue, 30 September 2026 (ODS, 12KB)</a></li>
+          <li><a href="#" data-toast="Sample: gilts in issue would download as Excel.">Gilts in issue, 30 September 2026 (Excel XLSX, 14KB)</a></li>
+          <li><a href="#" data-toast="Sample: gilts in issue would download as an accessible PDF.">Gilts in issue, 30 September 2026 (PDF, 88KB)</a></li>
+        </ul>
+        <div class="inset">
+          <p class="mb-0">Developers can get this data from the <a href="../pages/data-catalogue.html">DMO data API</a>, at a stable address for each date: <span class="code">/api/gilts-in-issue?date=2026-09-30</span></p>
+        </div>
+        <div class="wf-note query" data-note="4"><span class="wf-note-label">Question for the DMO</span>Q1: Who owns the report engine behind the D-codes? HTML tables and an API both depend on it, so this is the first conversation to have.</div>
+      </section>
+
+      <!-- Related links -->
+      <aside class="related" aria-labelledby="rel-title">
+        <h2 id="rel-title">Related data</h2>
+        <ul>
+          <li><a href="../pages/data-catalogue.html">All DMO datasets</a></li>
+          <li><a href="../pages/operations-calendar.html">Gilt operations and results</a></li>
+          <li><a href="../pages/remit.html">The 2026-27 financing remit</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the DMO's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Greyscale prototypes for discussion · Figures marked "sample" are illustrative, not DMO data</p>
+    </div>
+  </footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/dmo.js"></script>
+
+</body>
+</html>

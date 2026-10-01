@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWLB interest rates – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 5 of 5 · PWLB rates</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Today's PWLB rates in a table on the rates page, by loan type and term, with the time they were published and the change since the last set. Underneath, an estimator gives indicative repayments at those rates, and a separate page sets out <a href="~/pages/pwlb-apply.html">how to apply for a loan</a>.</p></div>
+          <div><h2>Why</h2><p>The Current Interest Rates page explains that fixed rates are published at 9:30am and 12:30pm, then sends readers elsewhere for the rates themselves. It also asks people to "please click here" for the rentcharges guidance and gives two phone numbers in different formats in one sentence. Local authority treasurers check these rates twice a day and know exactly what they want, so the page ought to give it to them first.</p></div>
+        </div>
+        <p class="proposal-foot">All rates on this page are sample figures. The margins used for standard and HRA rates are assumptions for the prototype.</p>
+      </div>
+    </aside>
+
+    <div class="container" id="pwlb-app">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="~/pages/home.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Local authority lending</a></li>
+          <li class="breadcrumb-item">PWLB interest rates</li>
+        </ol>
+      </nav>
+      <span class="caption">Local authority lending</span>
+      <h1 class="page-title">PWLB interest rates</h1>
+      <p class="page-intro">Fixed interest rates for new Public Works Loan Board loans. Rates are published at 9:30am and 12:30pm each working day.</p>
+
+      <!-- As-at stamp (R50) -->
+      <div class="stamp" role="note">
+        <span><b>Rates published:</b> 1 October 2026, 9:30am</span>
+        <span><b>Next rates:</b> 12:30pm today</span>
+        <span><b>Changes compared with:</b> 30 September 2026, 12:30pm</span>
+      </div>
+
+      <!-- Rates table (R50, R04) -->
+      <section aria-labelledby="rates-title">
+        <h2 class="visually-hidden" id="rates-title">Today's rates</h2>
+        <div class="filter-panel">
+          <div>
+            <span class="label" id="loan-label"><b>Loan type</b></span>
+            <div class="seg" role="group" aria-labelledby="loan-label">
+              <button type="button" data-loan="maturity" aria-pressed="true">Maturity</button>
+              <button type="button" data-loan="eip" aria-pressed="false">EIP</button>
+              <button type="button" data-loan="annuity" aria-pressed="false">Annuity</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="pwlb-ratetype">Rate</label>
+            <select id="pwlb-ratetype">
+              <option value="certainty">Certainty rate</option>
+              <option value="standard">Standard rate</option>
+              <option value="hra">HRA rate</option>
+            </select>
+          </div>
+          <div class="row"><span class="tag sample">Sample rates</span></div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption id="pwlb-caption">Maturity loans: certainty rate, % a year</caption>
+            <thead><tr><th scope="col">Term</th><th scope="col" class="n">Rate (%)</th><th scope="col" class="n">Change since last set (percentage points)</th></tr></thead>
+            <tbody id="pwlb-body"></tbody>
+          </table>
+        </div>
+        <p class="wf-meta">Every term from 1 to 50 years is in the downloads. <a href="#" data-toast="Sample: today's rates would download as CSV.">Today's rates (CSV, 6KB)</a> · <a href="#" data-toast="Sample: historical rates would download.">Historical rates (CSV, 2.1MB)</a> · <a href="~/pages/alerts.html">Get rates by email</a></p>
+        <div class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Choosing a loan type redraws the table. The table shows the most-used terms; the full 1 to 50-year range sits in the CSV, and could sit behind a "show all terms" control.</div>
+        <div class="wf-note query" data-note="2"><span class="wf-note-label">Question for the DMO</span>Q3: Which rate types should the table show by default, and should variable and NLF rates share this page or have their own?</div>
+      </section>
+
+      <!-- Estimator (R51) -->
+      <section aria-labelledby="est-title">
+        <h2 class="section-h" id="est-title">Estimate your repayments</h2>
+        <p class="reading">An indication only, using today's rates. The rate on your loan is fixed when the DMO accepts your application.</p>
+        <div class="calc-grid">
+          <div>
+            <div class="error-summary" id="est-errors" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+            <form id="est-form" novalidate>
+              <div class="field" id="est-amount-field">
+                <label for="est-amount">How much do you want to borrow?</label>
+                <div class="input-prefix"><span aria-hidden="true">£</span><input type="text" id="est-amount" inputmode="numeric" value="5,000,000" autocomplete="off"></div>
+              </div>
+              <div class="field" id="est-term-field">
+                <label for="est-term">Term</label>
+                <p class="field-hint">Between 1 and 50 years.</p>
+                <div class="input-suffix" style="max-width:12rem"><input type="text" id="est-term" inputmode="numeric" value="25" autocomplete="off"><span>years</span></div>
+              </div>
+              <fieldset>
+                <legend>How will you repay?</legend>
+                <div class="radios">
+                  <label class="radio"><input type="radio" name="est-type" value="annuity" checked><span>Annuity<span class="hint">The same payment every six months</span></span></label>
+                  <label class="radio"><input type="radio" name="est-type" value="eip"><span>Equal instalments of principal (EIP)<span class="hint">Payments start higher and fall</span></span></label>
+                  <label class="radio"><input type="radio" name="est-type" value="maturity"><span>Maturity<span class="hint">Interest only, then the full amount at the end</span></span></label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="est-ratetype">Rate</label>
+                <select id="est-ratetype">
+                  <option value="certainty">Certainty rate</option>
+                  <option value="standard">Standard rate</option>
+                  <option value="hra">HRA rate</option>
+                </select>
+              </div>
+              <button type="submit" class="btn">Estimate repayments</button>
+            </form>
+          </div>
+          <div aria-live="polite">
+            <div class="result-card" id="est-result" tabindex="-1" hidden>
+              <span class="muted" data-est="desc"></span>
+              <span data-est="firstlabel">Each half-yearly payment</span>
+              <span class="big" data-est="first"></span>
+              <dl class="summary-list mb-0">
+                <div><dt>Rate used</dt><dd data-est="rate"></dd></div>
+                <div><dt>Total interest</dt><dd data-est="interest"></dd></div>
+                <div><dt>Total repaid</dt><dd data-est="total"></dd></div>
+              </dl>
+              <p class="wf-meta mb-0">Sample rates. Rates between the terms in the table are interpolated.</p>
+            </div>
+            <div class="wf-note" data-note="3"><span class="wf-note-label">Behaviour</span>The PWLB menu already has an Estimated Repayment Costs page, which we haven't reviewed in detail. This would replace or sit alongside it.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact (R53) -->
+      <aside class="related" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact the PWLB team</h2>
+        <p class="mb-0">Email <a href="#">pwlb@dmo.gov.uk</a></p>
+        <p>For escalation only: 020 7862 6612 or 020 7862 6613, Monday to Friday, [opening hours]</p>
+        <ul>
+          <li><a href="~/pages/pwlb-apply.html">Apply for a PWLB loan</a></li>
+          <li><a href="#">Rentcharges guidance on GOV.UK</a></li>
+          <li><a href="#">Acquisition of Land Compensation Act rate</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financing remit 2026-27 – UK DMO prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Prototype navigator (replaces the DMO's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="UK DMO prototypes, overview">UK DMO <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/gilts-in-issue.html" data-proto="gilts-in-issue data-catalogue"><span class="n">1</span> Gilt market data</a></li>
+          <li><a href="../pages/gilt-operation.html" data-proto="gilt-operation operations-calendar alerts"><span class="n">2</span> Gilt operations</a></li>
+          <li><a href="../pages/remit.html" data-proto="remit home"><span class="n">3</span> Remit at a glance</a></li>
+          <li><a href="../pages/buying-gilts.html" data-proto="buying-gilts check-eligibility gilt-value"><span class="n">4</span> Buying gilts</a></li>
+          <li><a href="../pages/pwlb-rates.html" data-proto="pwlb-rates pwlb-apply"><span class="n">5</span> PWLB rates</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 3 of 5 · Remit at a glance</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Lead the Financing Remit page with the remit itself: the total, the split by maturity and type, when it was last revised, and how much has been sold so far, updated after each operation. The explanation of how the remit is set moves underneath, and the same figures go on the <a href="../pages/home.html">homepage</a>.</p></div>
+          <div><h2>Why</h2><p>The current page explains how HM Treasury sets the remit, then links to a PDF of progress, a page of announcements and an Excel file. It doesn't say what the remit is. For the one figure every gilt market user knows to look for, that seems an odd thing to leave off.</p></div>
+        </div>
+        <p class="proposal-foot">Planned figures are the 2026-27 remit as revised on 23 April 2026. Sales to date are sample figures.</p>
+      </div>
+    </aside>
+
+    <div class="container" id="remit-app">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="../pages/home.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Responsibilities</a></li>
+          <li class="breadcrumb-item">Financing remit</li>
+        </ol>
+      </nav>
+      <span class="caption">Responsibilities</span>
+      <h1 class="page-title">Financing remit 2026-27</h1>
+      <p class="page-intro">HM Treasury sets the DMO's remit each year: how much the government plans to raise by selling gilts, and the split between short, medium and long conventional gilts and index-linked gilts.</p>
+
+      <!-- Key figures (R30) -->
+      <section aria-labelledby="kf-title">
+        <h2 class="visually-hidden" id="kf-title">Key figures</h2>
+        <div class="key-figures">
+          <div><span>Planned gross gilt sales</span><b>£246.2bn</b><small class="muted">Remit revised 23 April 2026</small></div>
+          <div><span>Sold so far</span><b data-remit-sold>£122.0 billion</b><small class="muted">At 30 September 2026 · sample</small></div>
+          <div><span>Progress</span><b data-remit-pct>50%</b><small class="muted">Of planned gross sales</small></div>
+          <div><span>Net financing requirement</span><b>£251.2bn</b><small class="muted">Forecast for 2026-27</small></div>
+        </div>
+        <div class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>"Sold so far" and the progress table update automatically after each operation's result is published, from the same data as the results table.</div>
+      </section>
+
+      <!-- Progress table and bars (R31, R04) -->
+      <section aria-labelledby="prog-title">
+        <h2 class="section-h" id="prog-title">Progress against the remit</h2>
+        <div class="table-wrap">
+          <table class="data-table mid">
+            <caption>Gilt sales in 2026-27 at 30 September 2026, £ billion <span class="tag sample">Sales are sample</span></caption>
+            <thead><tr><th scope="col">Gilt type</th><th scope="col" class="n">Planned</th><th scope="col" class="n">Sold</th><th scope="col" class="n">Remaining</th><th scope="col" class="n">Progress</th></tr></thead>
+            <tbody id="remit-body"></tbody>
+            <tfoot><tr id="remit-foot"></tr></tfoot>
+          </table>
+        </div>
+        <p class="legend" aria-hidden="true"><span><i></i>Sold</span><span><i class="alt"></i>Remaining</span></p>
+        <div class="hbars" id="remit-bars" aria-hidden="true"></div>
+        <p class="wf-meta">Treasury bills are planned to contribute a further £5.0 billion to financing in 2026-27.</p>
+      </section>
+
+      <!-- History of announcements (R32, R06) -->
+      <section aria-labelledby="hist-title">
+        <h2 class="section-h" id="hist-title">Remit announcements</h2>
+        <ul class="downloads">
+          <li class="attachment"><span class="wf-placeholder thumb">HTML</span><div><h3><a href="#">Revision to the DMO financing remit 2026-27</a></h3><p>23 April 2026 · HTML, with <a href="#" data-toast="Sample: PDF would open.">PDF version (PDF, 210KB)</a></p></div></li>
+          <li class="attachment"><span class="wf-placeholder thumb">HTML</span><div><h3><a href="#">DMO financing remit 2026-27</a></h3><p>March 2026 · HTML, with PDF version</p></div></li>
+          <li class="attachment"><span class="wf-placeholder thumb">XLSX</span><div><h3><a href="#" data-toast="Sample: spreadsheet would download.">Composition of gilt issuance in past remits</a></h3><p>Excel and CSV · Every remit since 1998-99</p></div></li>
+        </ul>
+        <div class="wf-note query" data-note="2"><span class="wf-note-label">Question for the DMO</span>We've dated the original 2026-27 remit "March 2026" from memory of the usual timetable. Which date should it carry, and should each in-year revision show what changed?</div>
+      </section>
+
+      <!-- How the remit is set (moved below the figures) -->
+      <section aria-labelledby="how-title" class="reading">
+        <h2 class="section-h" id="how-title">How the remit is set</h2>
+        <p>Before each financial year, HM Treasury sets out how much the government needs to borrow and how the DMO should raise it. The remit can be revised during the year, usually after a Budget or fiscal event.</p>
+        <details class="details">
+          <summary>What do short, medium and long mean?</summary>
+          <div class="details-text">Short conventional gilts are due to be repaid within 7 years, medium within 7 to 15 years and long in more than 15 years. Index-linked gilts pay interest and repay capital in line with inflation.</div>
+        </details>
+        <details class="details">
+          <summary>What is the unallocated amount?</summary>
+          <div class="details-text">Part of the year's sales the DMO can assign to any type or method later in the year, depending on demand.</div>
+        </details>
+        <p><a href="../pages/data-catalogue.html">Gross and net issuance data since 1998-99</a> · Green gilt financing: <a href="#">allocation and impact reports</a></p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the DMO's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Greyscale prototypes for discussion · Figures marked "sample" are illustrative, not DMO data</p>
+    </div>
+  </footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/dmo.js"></script>
+
+</body>
+</html>

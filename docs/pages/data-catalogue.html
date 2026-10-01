@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMO data – UK DMO prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Prototype navigator (replaces the DMO's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="UK DMO prototypes, overview">UK DMO <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/gilts-in-issue.html" data-proto="gilts-in-issue data-catalogue"><span class="n">1</span> Gilt market data</a></li>
+          <li><a href="../pages/gilt-operation.html" data-proto="gilt-operation operations-calendar alerts"><span class="n">2</span> Gilt operations</a></li>
+          <li><a href="../pages/remit.html" data-proto="remit home"><span class="n">3</span> Remit at a glance</a></li>
+          <li><a href="../pages/buying-gilts.html" data-proto="buying-gilts check-eligibility gilt-value"><span class="n">4</span> Buying gilts</a></li>
+          <li><a href="../pages/pwlb-rates.html" data-proto="pwlb-rates pwlb-apply"><span class="n">5</span> PWLB rates</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 1 of 5 · Gilt market data · Data catalogue</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>One page that lists every DMO dataset, with what it contains, how often it changes, when it last changed and the formats it comes in. Each entry goes straight to the data, and the API is documented here too.</p></div>
+          <div><h2>Why</h2><p>The Data section today is a list of twelve links, each leading to an introduction page and then to a report form. So the data is three clicks from the menu, and nowhere on the way does it say when anything was last updated. For people who use the site every day, the update times are often the whole point.</p></div>
+        </div>
+        <p class="proposal-foot">Report codes are the DMO's own. Descriptions, dates and formats are as proposed, not as published today.</p>
+      </div>
+    </aside>
+
+    <div class="container" id="cat-app">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="../pages/home.html">Home</a></li>
+          <li class="breadcrumb-item">Data</li>
+        </ol>
+      </nav>
+      <span class="caption">Gilt market data</span>
+      <h1 class="page-title">DMO data</h1>
+      <p class="page-intro">Data on gilts, Treasury bills, gilt operations and lending to local authorities. Every dataset is free to use under the Open Government Licence.</p>
+
+      <div class="two-thirds">
+        <div>
+          <!-- Topic filter and search (R16) -->
+          <section aria-labelledby="find-title">
+            <h2 class="visually-hidden" id="find-title">Find a dataset</h2>
+            <div class="field">
+              <label for="cat-search">Search datasets</label>
+              <input type="search" id="cat-search" placeholder="For example, yields or D1A">
+            </div>
+            <div class="chips" role="group" aria-label="Filter by topic">
+              <button type="button" class="chip" data-topic="All" aria-pressed="true">All</button>
+              <button type="button" class="chip" data-topic="Gilts" aria-pressed="false">Gilts</button>
+              <button type="button" class="chip" data-topic="Operations" aria-pressed="false">Operations</button>
+              <button type="button" class="chip" data-topic="Prices and yields" aria-pressed="false">Prices and yields</button>
+              <button type="button" class="chip" data-topic="Market activity" aria-pressed="false">Market activity</button>
+              <button type="button" class="chip" data-topic="Money markets" aria-pressed="false">Money markets</button>
+              <button type="button" class="chip" data-topic="Local authority lending" aria-pressed="false">Local authority lending</button>
+            </div>
+            <p class="result-count" id="cat-count" aria-live="polite"></p>
+            <ul class="cat-list" id="cat-list"></ul>
+            <div class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Search matches names, descriptions and report codes, so people who already know "D1A" can still type it. Gilts in issue, the results table, PWLB rates and the remit are linked to the other prototypes.</div>
+          </section>
+        </div>
+
+        <!-- API panel (R14, R16) -->
+        <aside aria-labelledby="api-title">
+          <div class="panel surface">
+            <h2 id="api-title" class="section-h">Use the data API</h2>
+            <p>Every dataset is available as JSON or CSV at a stable address. No key is needed.</p>
+            <p class="mb-0"><span class="code">GET /api/gilts-in-issue?date=2026-09-30</span></p>
+            <p class="wf-meta">Returns one record per gilt: name, ISIN, type, coupon, redemption date, nominal in issue.</p>
+            <p class="mb-0"><a href="#" data-toast="Sample: API documentation page.">Read the API documentation</a></p>
+          </div>
+          <div class="wf-note query" data-note="2"><span class="wf-note-label">Question for the DMO</span>Do dealers and data vendors already take this data by some other route? If so, an open API may matter more to analysts, journalists and academics than to the market itself.</div>
+          <div class="related">
+            <h2>Data held elsewhere</h2>
+            <ul>
+              <li><a href="#">Bank of England yield curves</a></li>
+              <li><a href="#">ONS public sector finances</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the DMO's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Greyscale prototypes for discussion · Figures marked "sample" are illustrative, not DMO data</p>
+    </div>
+  </footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/dmo.js"></script>
+
+</body>
+</html>

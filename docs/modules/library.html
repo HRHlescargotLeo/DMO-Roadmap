@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module library – UK DMO prototypes</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Prototype navigator (replaces the DMO's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="UK DMO prototypes, overview">UK DMO <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/gilts-in-issue.html" data-proto="gilts-in-issue data-catalogue"><span class="n">1</span> Gilt market data</a></li>
+          <li><a href="../pages/gilt-operation.html" data-proto="gilt-operation operations-calendar alerts"><span class="n">2</span> Gilt operations</a></li>
+          <li><a href="../pages/remit.html" data-proto="remit home"><span class="n">3</span> Remit at a glance</a></li>
+          <li><a href="../pages/buying-gilts.html" data-proto="buying-gilts check-eligibility gilt-value"><span class="n">4</span> Buying gilts</a></li>
+          <li><a href="../pages/pwlb-rates.html" data-proto="pwlb-rates pwlb-apply"><span class="n">5</span> PWLB rates</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main">
+    <div class="container">
+      <span class="caption">UK DMO prototypes</span>
+      <h1 class="page-title">Module library</h1>
+      <p class="page-intro">Each component used across the five prototypes, shown once. All follow GOV.UK Design System patterns; the DMO's colours and type are applied later, in theme.css.</p>
+
+      <!-- Page heading with caption (R03) -->
+      <section aria-labelledby="m1">
+        <h2 class="section-title" id="m1">Page heading with caption</h2>
+        <span class="caption">Gilt market data</span>
+        <p class="page-title" style="font-size:2.25rem;font-weight:600">Gilts in issue</p>
+        <p class="wf-meta">The caption names the section; the H1 names the page. Used on: every page.</p>
+      </section>
+
+      <!-- As-at stamp (R12) -->
+      <section aria-labelledby="m2">
+        <h2 class="section-title" id="m2">As-at stamp</h2>
+        <div class="stamp" role="note"><span><b>Data as at:</b> close of business, 30 September 2026</span><span><b>Next update:</b> 1 October 2026</span></div>
+        <p class="wf-meta">Used on: gilts in issue, PWLB rates, key figures.</p>
+      </section>
+
+      <!-- Notification banner (R24) -->
+      <section aria-labelledby="m3">
+        <h2 class="section-title" id="m3">Notification banner</h2>
+        <div class="notice" role="region" aria-labelledby="lib-notice">
+          <div class="notice-title" id="lib-notice">Consultation open</div>
+          <div class="notice-body"><h3>Programmatic gilt tender on Wednesday 7 October</h3><p>The DMO is seeking views on which conventional gilt to offer. <a href="#">Read the consultation</a>.</p></div>
+        </div>
+      </section>
+
+      <!-- Key figures (R30, R33) -->
+      <section aria-labelledby="m4">
+        <h2 class="section-title" id="m4">Key figures</h2>
+        <div class="key-figures">
+          <div><span>Planned gilt sales</span><b>£246.2bn</b><small class="muted">Remit revised 23 April 2026</small></div>
+          <div><span>Sold so far</span><b>£122.0bn</b><small class="muted">Sample</small></div>
+          <div><span>Next operation</span><b>6 Oct</b><small class="muted">Index-linked auction · sample</small></div>
+        </div>
+      </section>
+
+      <!-- Date input and errors (R02, R13) -->
+      <section aria-labelledby="m5">
+        <h2 class="section-title" id="m5">Date input, error summary and error message</h2>
+        <div class="error-summary" role="alert"><h2>There is a problem</h2><ul><li><a href="#lib-year">Year must include 4 numbers</a></li></ul></div>
+        <div class="field has-error">
+          <fieldset role="group" aria-describedby="lib-date-hint">
+            <legend>Show gilts in issue on</legend>
+            <p class="field-hint" id="lib-date-hint">For example, 27 3 2026</p>
+            <p class="field-error"><span class="visually-hidden">Error:</span> Year must include 4 numbers</p>
+            <div class="date-input">
+              <div class="field"><label for="lib-day">Day</label><input type="text" id="lib-day" inputmode="numeric" value="27"></div>
+              <div class="field"><label for="lib-month">Month</label><input type="text" id="lib-month" inputmode="numeric" value="3"></div>
+              <div class="field yyyy"><label for="lib-year">Year</label><input type="text" id="lib-year" class="is-error" inputmode="numeric" value="26"></div>
+            </div>
+          </fieldset>
+        </div>
+      </section>
+
+      <!-- Data table (R04) -->
+      <section aria-labelledby="m6">
+        <h2 class="section-title" id="m6">Data table</h2>
+        <div class="table-wrap">
+          <table class="data-table mid">
+            <caption>Gilts in issue at close of business, 30 September 2026 (sample)</caption>
+            <thead><tr><th scope="col" aria-sort="ascending"><button type="button" class="sort-btn">Gilt</button></th><th scope="col">Type</th><th scope="col" class="n">Nominal in issue (£ million)</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">4⅝% Treasury Gilt 2032</th><td>Conventional</td><td class="n">33,750</td></tr>
+              <tr><th scope="row">1⅛% Index-linked Treasury Gilt 2035</th><td>Index-linked</td><td class="n">15,600</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row" colspan="2">Total</th><td class="n">49,350</td></tr></tfoot>
+          </table>
+        </div>
+      </section>
+
+      <!-- Summary list (R20) -->
+      <section aria-labelledby="m7">
+        <h2 class="section-title" id="m7">Summary list</h2>
+        <dl class="summary-list">
+          <div><dt>Gilt</dt><dd>4⅞% Treasury Gilt 2036</dd></div>
+          <div><dt>Method</dt><dd>Auction</dd></div>
+          <div><dt>Size</dt><dd>£4,250 million</dd></div>
+        </dl>
+      </section>
+
+      <!-- Timeline (R20) -->
+      <section aria-labelledby="m8">
+        <h2 class="section-title" id="m8">Operation timeline</h2>
+        <ol class="timeline">
+          <li class="done"><h3>Announced, with prospectus</h3><span class="when">22 September 2026</span></li>
+          <li class="done"><h3>Bidding</h3><span class="when">29 September 2026</span></li>
+          <li><h3>Result</h3><span class="when">29 September 2026</span></li>
+        </ol>
+      </section>
+
+      <!-- Attachment (R06) -->
+      <section aria-labelledby="m9">
+        <h2 class="section-title" id="m9">Attachment</h2>
+        <ul class="downloads">
+          <li class="attachment"><span class="wf-placeholder thumb">PDF</span><div><h3><a href="#">Prospectus: Auction of 4⅞% Treasury Gilt 2036</a></h3><p>PDF, 142KB · Published 22 September 2026</p><p class="access">Accessible PDF</p></div></li>
+        </ul>
+      </section>
+
+      <!-- Bar chart (R15, R31) -->
+      <section aria-labelledby="m10">
+        <h2 class="section-title" id="m10">Bar chart with table alternative</h2>
+        <div class="hbars" aria-hidden="true">
+          <div class="hbar"><span>Short conventional</span><span class="track"><span class="fill" style="width:54%"></span></span><span class="val">51.6 / 95.0</span></div>
+          <div class="hbar"><span>Index-linked</span><span class="track"><span class="fill" style="width:49%"></span></span><span class="val">11.2 / 23.0</span></div>
+        </div>
+        <p class="wf-meta">Always paired with a data table, which is the accessible version.</p>
+      </section>
+
+      <!-- Step by step (R40, R52) -->
+      <section aria-labelledby="m11">
+        <h2 class="section-title" id="m11">Step-by-step navigation</h2>
+        <ol class="step-by-step">
+          <li><h2>Check you can borrow</h2><p>Local authorities and other eligible bodies.</p></li>
+          <li><h2>Complete the application form</h2><p>One stable link to the current form.</p></li>
+        </ol>
+      </section>
+
+      <!-- Details (R41) -->
+      <section aria-labelledby="m12">
+        <h2 class="section-title" id="m12">Details</h2>
+        <details class="details"><summary>What is a dealing day?</summary><div class="details-text">Any business day when the London Stock Exchange is open.</div></details>
+      </section>
+
+      <!-- Question page (R42) -->
+      <section aria-labelledby="m13">
+        <h2 class="section-title" id="m13">Question page</h2>
+        <div class="question">
+          <fieldset>
+            <legend><span style="font-size:1.75rem;font-weight:600">Do you live in the UK?</span></legend>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="lib-uk"> Yes</label>
+              <label class="radio"><input type="radio" name="lib-uk"> No</label>
+            </div>
+          </fieldset>
+          <button type="button" class="btn">Continue</button>
+        </div>
+      </section>
+
+      <!-- Result panel (R42, R43) -->
+      <section aria-labelledby="m14">
+        <h2 class="section-title" id="m14">Result panels</h2>
+        <div class="panel-confirm"><p style="font-size:1.5rem;font-weight:600" class="mb-0">You can use the Purchase and Sale Service</p></div>
+        <div class="result-card"><span>Indicative value</span><span class="big">£4,685.00</span><span class="tag sample">Sample price</span></div>
+      </section>
+
+      <!-- Tags -->
+      <section aria-labelledby="m15">
+        <h2 class="section-title" id="m15">Tags</h2>
+        <p class="row"><span class="tag solid">Result</span><span class="tag">Announced</span><span class="tag grey">Planned</span><span class="tag sample">Sample</span></p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the DMO's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Greyscale prototypes for discussion · Figures marked "sample" are illustrative, not DMO data</p>
+    </div>
+  </footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/dmo.js"></script>
+
+</body>
+</html>

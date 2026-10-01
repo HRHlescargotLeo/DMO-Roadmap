@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is my gilt worth? – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 4 of 5 · Buying gilts · Value a holding</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Choose a gilt, enter how much of it you hold, and see an indicative value at today's price, with the interest it pays and when it's repaid. It uses the same daily prices the Purchase and Sale Service publishes now.</p></div>
+          <div><h2>Why</h2><p>The prices are already published, as the D10B and D9D reports, but as file downloads that assume the reader knows what "per £100 nominal" means and can do the multiplication. Someone who has inherited a gilt certificate, which is probably a common reason to land on these pages, just wants to know what it's worth.</p></div>
+        </div>
+        <p class="proposal-foot">Prices are sample figures. Open this page from a row in <a href="~/pages/gilts-in-issue.html">gilts in issue</a> to arrive with the gilt already chosen.</p>
+      </div>
+    </aside>
+
+    <div class="container" id="value-app">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="~/pages/home.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="~/pages/buying-gilts.html">Buy and sell gilts</a></li>
+          <li class="breadcrumb-item">What is my gilt worth?</li>
+        </ol>
+      </nav>
+      <span class="caption">Buy and sell gilts</span>
+      <h1 class="page-title">What is my gilt worth?</h1>
+      <p class="page-intro">Get an indicative value for gilts you hold, using the Purchase and Sale Service price at close of business on 30 September 2026.</p>
+
+      <!-- Value lookup (R43) -->
+      <div class="calc-grid">
+        <section aria-labelledby="form-title">
+          <h2 class="visually-hidden" id="form-title">Your gilt</h2>
+          <div class="error-summary" id="val-errors" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+          <form id="val-form" novalidate>
+            <div class="field" id="val-gilt-field">
+              <label for="val-gilt">Which gilt do you hold?</label>
+              <p class="field-hint">The name is on your gilt certificate, for example "4¼% Treasury Gilt 2040".</p>
+              <select id="val-gilt"></select>
+            </div>
+            <div class="field" id="val-nominal-field">
+              <label for="val-nominal">Nominal amount you hold</label>
+              <p class="field-hint">Also on your certificate. It's the amount repaid when the gilt redeems, not what you paid.</p>
+              <div class="input-prefix"><span aria-hidden="true">£</span><input type="text" id="val-nominal" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+            </div>
+            <button type="submit" class="btn">Show value</button>
+          </form>
+        </section>
+
+        <section aria-live="polite">
+          <div class="result-card" id="val-result" tabindex="-1" hidden>
+            <span class="muted" data-val="name"></span>
+            <span>Indicative value</span>
+            <span class="big" data-val="value"></span>
+            <span class="tag sample">Sample price</span>
+            <dl class="summary-list mb-0">
+              <div><dt>Price at close of business, 30 September 2026</dt><dd data-val="price"></dd></div>
+              <div><dt>Nominal amount</dt><dd data-val="nominal"></dd></div>
+              <div><dt>Interest</dt><dd data-val="interest"></dd></div>
+              <div><dt>Repaid on</dt><dd data-val="redeem"></dd></div>
+            </dl>
+            <p class="wf-meta mb-0" data-val="il" hidden>This is an index-linked gilt, so the amount repaid and the interest rise with inflation. The value shown doesn't include that uplift.</p>
+            <p class="wf-meta mb-0">The price you'd get if you sold could be different. It doesn't include accrued interest or dealing costs.</p>
+          </div>
+          <div class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The value is nominal times price divided by 100. A real version would also add accrued interest and, for index-linked gilts, the index ratio, both of which the DMO already publishes.</div>
+        </section>
+      </div>
+
+      <aside class="related" aria-labelledby="rel-title" style="margin-top:2.5rem">
+        <h2 id="rel-title">Related</h2>
+        <ul>
+          <li><a href="~/pages/buying-gilts.html">Buy and sell gilts as an individual</a></li>
+          <li><a href="#" data-toast="Sample: daily prices would download as CSV.">Daily Purchase and Sale Service prices (CSV, 3KB)</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

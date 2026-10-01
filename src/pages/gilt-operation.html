@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gilt operation – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Gilt operations</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A page for each auction, syndication and tender that carries it from the calendar to the result. The key facts sit at the top, a timeline shows where it has got to, the result is published in the page itself, and the PDFs are attached underneath for the record. Every notice links back here, and people can sign up to be told when the result is out.</p></div>
+          <div><h2>Why</h2><p>Each operation currently produces a run of separate PDFs. The 4⅞% Treasury Gilt 2036 auction on 29 September has five rows in the Publications table, the announcement and prospectus a week earlier, then the result, the post-auction option result and a re-opening prospectus on the day. Nothing ties them together, and the result, which is the thing the market is waiting for, is a 67KB PDF. GDS guidance is to publish in HTML first; this is also simply quicker to read.</p></div>
+        </div>
+        <p class="proposal-foot">Gilt names, dates and sizes for September come from DMO publications. Results and ISINs are sample figures. Open other operations from the <a href="~/pages/operations-calendar.html">calendar</a>.</p>
+      </div>
+    </aside>
+
+    <div class="container" id="op-app">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="~/pages/home.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="~/pages/operations-calendar.html">Gilt operations</a></li>
+          <li class="breadcrumb-item" data-op="title">Auction of 4⅞% Treasury Gilt 2036</li>
+        </ol>
+      </nav>
+      <span class="caption">Gilt operations</span>
+      <h1 class="page-title" data-op="title">Auction of 4⅞% Treasury Gilt 2036</h1>
+      <p data-op="status"></p>
+
+      <div class="two-thirds">
+        <div>
+          <!-- Key facts (R20) -->
+          <section aria-labelledby="facts-title">
+            <h2 class="section-h" id="facts-title">Key facts</h2>
+            <dl class="summary-list" id="op-facts"></dl>
+          </section>
+
+          <!-- Result in HTML (R20) -->
+          <section aria-labelledby="result-title">
+            <h2 class="section-h" id="result-title">Result</h2>
+            <div id="op-result"></div>
+            <div class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The result is published here first, in the same minute as the PDF, and the same figures feed the results dataset and API. The PDF stays as the formal record.</div>
+            <div class="wf-note query" data-note="2"><span class="wf-note-label">Question for the DMO</span>Q2: Is there a market or legal reason the PDF has to be the primary version of a result? If so, the HTML could be labelled as a copy.</div>
+          </section>
+
+          <!-- Documents (R21, R06) -->
+          <section aria-labelledby="docs-title">
+            <h2 class="section-h" id="docs-title">Documents</h2>
+            <ul class="downloads" id="op-docs"></ul>
+          </section>
+        </div>
+
+        <!-- Timeline and related (R20) -->
+        <aside aria-labelledby="tl-title">
+          <h2 class="section-h" id="tl-title">Progress</h2>
+          <ol class="timeline" id="op-timeline"></ol>
+          <p><a class="btn btn-secondary" href="~/pages/alerts.html">Get emails about gilt operations</a></p>
+          <div class="related">
+            <h2>Related</h2>
+            <ul id="op-related"></ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

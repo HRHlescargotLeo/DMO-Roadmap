@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get emails from the DMO – UK DMO prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Prototype navigator (replaces the DMO's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="UK DMO prototypes, overview">UK DMO <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/gilts-in-issue.html" data-proto="gilts-in-issue data-catalogue"><span class="n">1</span> Gilt market data</a></li>
+          <li><a href="../pages/gilt-operation.html" data-proto="gilt-operation operations-calendar alerts"><span class="n">2</span> Gilt operations</a></li>
+          <li><a href="../pages/remit.html" data-proto="remit home"><span class="n">3</span> Remit at a glance</a></li>
+          <li><a href="../pages/buying-gilts.html" data-proto="buying-gilts check-eligibility gilt-value"><span class="n">4</span> Buying gilts</a></li>
+          <li><a href="../pages/pwlb-rates.html" data-proto="pwlb-rates pwlb-apply"><span class="n">5</span> PWLB rates</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Gilt operations · Email alerts</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A short sign-up for email alerts by topic, with a choice of every update or a daily summary, plus an RSS feed for each topic. It follows the GOV.UK pattern of one thing per page, then a check-your-answers page before anything is sent.</p></div>
+          <div><h2>Why</h2><p>We found no email or RSS sign-up on the homepage or the Publications page. Anyone who needs to know the moment a result is out has to keep checking the site. Other sovereign debt offices offer alerts as a matter of course.</p></div>
+        </div>
+        <p class="proposal-foot">Nothing is sent from this prototype.</p>
+      </div>
+    </aside>
+
+    <div class="container" id="alerts-app">
+      <a class="back-link" href="../pages/operations-calendar.html">Back to gilt operations</a>
+      <span class="caption">Email alerts</span>
+
+      <!-- Stepped sign-up (R23) -->
+      <ol class="stepper alerts-stepper" aria-label="Progress">
+        <li>Topics</li><li>How often</li><li>Email</li><li>Check</li>
+      </ol>
+
+      <!-- Step 1: topics -->
+      <section class="step-panel question" aria-labelledby="a1-title">
+        <div class="error-summary" id="alerts-1-errors" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+        <form id="alerts-1" novalidate>
+          <div class="field" id="alerts-1-field">
+            <fieldset aria-describedby="a1-hint">
+              <legend><h1 id="a1-title">What do you want emails about?</h1></legend>
+              <p class="field-hint" id="a1-hint">Select all that apply.</p>
+              <div class="radios">
+                <label class="radio"><input type="checkbox" name="alert-topic" id="topic-ops" value="ops"><span>Gilt operations announced<span class="hint">Auctions, syndications and tenders, with the prospectus</span></span></label>
+                <label class="radio"><input type="checkbox" name="alert-topic" value="results"><span>Results of gilt operations<span class="hint">Sent as soon as each result is published</span></span></label>
+                <label class="radio"><input type="checkbox" name="alert-topic" value="remit"><span>Financing remit and revisions</span></label>
+                <label class="radio"><input type="checkbox" name="alert-topic" value="tbills"><span>Treasury bill tenders</span></label>
+                <label class="radio"><input type="checkbox" name="alert-topic" value="consult"><span>Consultations</span></label>
+                <label class="radio"><input type="checkbox" name="alert-topic" value="pwlb"><span>PWLB interest rates<span class="hint">Twice each working day</span></span></label>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="btn">Continue</button>
+        </form>
+        <p class="wf-meta">Prefer a feed? <a href="#" data-toast="Sample: RSS feed for gilt operations.">RSS feeds for each topic</a></p>
+      </section>
+
+      <!-- Step 2: frequency -->
+      <section class="step-panel question" aria-labelledby="a2-title" hidden>
+        <a class="back-link" href="#" data-step-back="0">Back</a>
+        <div class="error-summary" id="alerts-2-errors" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+        <form id="alerts-2" novalidate>
+          <div class="field" id="alerts-2-field">
+            <fieldset>
+              <legend><h1 id="a2-title">How often do you want emails?</h1></legend>
+              <div class="radios">
+                <label class="radio"><input type="radio" name="alert-freq" id="freq-now" value="now"><span><strong>Every time something is published</strong><span class="hint">Best for results and rates</span></span></label>
+                <label class="radio"><input type="radio" name="alert-freq" value="daily"><span><strong>Once a day</strong><span class="hint">A summary at 5pm on working days</span></span></label>
+                <label class="radio"><input type="radio" name="alert-freq" value="weekly"><span><strong>Once a week</strong><span class="hint">A summary on Friday afternoons</span></span></label>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="btn">Continue</button>
+        </form>
+      </section>
+
+      <!-- Step 3: email -->
+      <section class="step-panel question" aria-labelledby="a3-title" hidden>
+        <a class="back-link" href="#" data-step-back="1">Back</a>
+        <div class="error-summary" id="alerts-3-errors" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+        <form id="alerts-3" novalidate>
+          <div class="field" id="alerts-3-field">
+            <label for="alert-email"><h1 id="a3-title" class="mb-0">What is your email address?</h1></label>
+            <p class="field-hint">We'll only use it to send the emails you ask for.</p>
+            <input type="email" id="alert-email" autocomplete="email" spellcheck="false">
+          </div>
+          <button type="submit" class="btn">Continue</button>
+        </form>
+      </section>
+
+      <!-- Step 4: check answers -->
+      <section class="step-panel question" aria-labelledby="a4-title" hidden>
+        <a class="back-link" href="#" data-step-back="2">Back</a>
+        <h1 id="a4-title">Check your answers</h1>
+        <dl class="summary-list">
+          <div><dt>Topics</dt><dd id="check-topics"></dd></div>
+          <div><dt>How often</dt><dd id="check-freq"></dd></div>
+          <div><dt>Email address</dt><dd id="check-email"></dd></div>
+        </dl>
+        <p><button type="button" class="btn-link" data-step-back="0">Change topics</button></p>
+        <form id="alerts-4" novalidate>
+          <p>We'll send you an email to confirm your address before anything else is sent.</p>
+          <button type="submit" class="btn">Sign up</button>
+        </form>
+      </section>
+
+      <!-- Step 5: confirmation -->
+      <section class="step-panel question" aria-labelledby="a5-title" hidden>
+        <div class="panel-confirm">
+          <h1 id="a5-title">Check your email</h1>
+          <p class="mb-0">We've sent a link to <strong id="confirm-email"></strong>. Select it within 7 days to start your emails.</p>
+        </div>
+        <p><a href="../pages/operations-calendar.html">Back to gilt operations</a></p>
+      </section>
+
+      <div class="wf-note query" data-note="1"><span class="wf-note-label">Question for the DMO</span>Q5: Would alerts go through GOV.UK Notify, or an existing mailing tool? Notify is free for central government and handles the confirmation and unsubscribe links.</div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the DMO's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Greyscale prototypes for discussion · Figures marked "sample" are illustrative, not DMO data</p>
+    </div>
+  </footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/dmo.js"></script>
+
+</body>
+</html>
