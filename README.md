@@ -1,6 +1,6 @@
-# UK Debt Management Office — website improvement prototypes (V1)
+# UK Debt Management Office — website improvement prototypes (V2)
 
-Five clickable prototypes for improvements to dmo.gov.uk, prepared by ClerksWell following the phase 1 review (1 October 2026). This round is greyscale: structure, content and behaviour only. The DMO design layer (Lato, charcoal, red rules, yellow focus) will go entirely in `src/css/theme.css` in the next round.
+Five clickable prototypes for improvements to dmo.gov.uk, prepared by ClerksWell following the phase 1 review (1 October 2026). The DMO design layer (Lato, charcoal, the red heading rule, square corners, GOV.UK yellow focus) lives entirely in `src/css/theme.css`; delete that file to get the greyscale prototypes back. Lato and Roboto Mono are self-hosted in `src/assets/fonts` (SIL Open Font Licence), as the DMO self-hosts Lato. The DMO logo is drawn as a text wordmark with the red rule; the Royal Arms is not reproduced. There is no photography: the DMO site uses almost none, so none was added.
 
 Every page follows GOV.UK Design System patterns (date input, error summary, tables, summary lists, step-by-step, question pages, notification banner) and targets WCAG 2.2 AA.
 
@@ -31,4 +31,4 @@ node build-includes.js && node validate.js
 Edit files in `src/`; `docs/` is generated (commit it, as GitHub Pages serves it). The prototype navigator (top bar with the Notes switch) and the previous/next footer live in `src/includes/`. Shared behaviour is in `src/js/wireframe.js`; DMO-specific behaviour in `src/js/dmo.js`.
 
 ## Status
-V1, greyscale prototypes for internal review. The DMO's own header and footer are replaced by a prototype navigator. Notes are off by default; switch "Notes on" in the top bar to show what each prototype proposes and why, plus in-page annotations (yellow for behaviour, red for open questions for the DMO).
+V2, designed prototypes for internal review (V1 was greyscale). The DMO's own header and footer are replaced by a prototype navigator. Notes are off by default; switch "Notes on" in the top bar to show what each prototype proposes and why, plus in-page annotations (yellow for behaviour, red for open questions for the DMO).

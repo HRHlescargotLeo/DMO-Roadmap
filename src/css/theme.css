@@ -1,6 +1,254 @@
 /* ==========================================================================
-   theme.css — the design layer. Deliberately empty in the greyscale round.
-   Phase 3 applies the DMO look (Lato, charcoal, red, square corners) here,
-   using the tokens from the phase 1 design system, without touching
-   base.css, components.css or any page.
+   theme.css — the DMO design layer (V2)
+
+   Everything visual lives here. Delete this file and the pack returns to the
+   greyscale prototypes. Values come from the phase 1 design system, measured
+   from dmo.gov.uk on 1 October 2026: Lato, ink #191919, charcoal #303030,
+   red #BE2D1A, ground #F8F8F8, square corners. GOV.UK pattern additions are
+   the yellow focus state, darker red for hover, and #505A5F for secondary
+   text (7:1 on white, where the live site's #6F777B is only 4.6:1).
    ========================================================================== */
+
+/* Lato and Roboto Mono, self-hosted as the DMO does (SIL Open Font Licence).
+   Lato has no ⅛ ⅜ ⅝ ⅞ glyphs, so those fall back to Arial. */
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/lato-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Lato'; font-style: italic; font-weight: 400; font-display: swap; src: url('../assets/fonts/lato-latin-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 700; font-display: swap; src: url('../assets/fonts/lato-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Lato'; font-style: italic; font-weight: 700; font-display: swap; src: url('../assets/fonts/lato-latin-700-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Roboto Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/roboto-mono-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Roboto Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('../assets/fonts/roboto-mono-latin-500-normal.woff2') format('woff2'); }
+
+
+:root {
+  --dmo-ink: #191919;
+  --dmo-charcoal: #303030;
+  --dmo-graphite: #454545;
+  --dmo-red: #BE2D1A;
+  --dmo-red-dark: #8F2112;
+  --dmo-ground: #F8F8F8;
+  --dmo-mist: #DCDCDC;
+  --dmo-rule: #B1B4B6;
+  --dmo-secondary: #505A5F;
+  --dmo-tint: #F3F2F1;
+  --dmo-focus: #FFDD00;
+  --dmo-focus-text: #0B0C0C;
+  --dmo-success: #005A30;
+  --dmo-success-bg: #CCE2D8;
+  --dmo-font: 'Lato', Arial, Helvetica, sans-serif;
+  --dmo-mono: 'Roboto Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  /* Map the wireframe tokens onto the DMO palette */
+  --wf-page: #FFFFFF;
+  --wf-surface: var(--dmo-ground);
+  --wf-placeholder: #E8E8E8;
+  --wf-border: var(--dmo-mist);
+  --wf-border-strong: var(--dmo-rule);
+  --wf-text: var(--dmo-ink);
+  --wf-text-muted: var(--dmo-secondary);
+  --wf-action: var(--dmo-red);
+  --wf-action-hover: var(--dmo-red-dark);
+  --wf-note-query-border: var(--dmo-red);
+  --wf-radius: 0;
+}
+
+/* Type ----------------------------------------------------------------- */
+body { font-family: var(--dmo-font); color: var(--dmo-ink); font-size: 1.0625rem; }
+h1, h2, h3, h4, h5, h6, .page-title { font-family: var(--dmo-font); font-weight: 700; color: var(--dmo-charcoal); text-wrap: balance; }
+h1, .page-title { font-size: 2.25rem; line-height: 1.12; }
+.caption { color: var(--dmo-secondary); font-size: 1.1875rem; }
+.page-intro { font-size: 1.25rem; line-height: 1.5; }
+.wf-meta, small { color: var(--dmo-secondary); }
+.code, .data-table .mono { font-family: var(--dmo-mono); }
+
+/* The DMO signature: section headings with a 2px red rule beneath */
+.section-h, .section-title, .hub-h2 { color: var(--dmo-charcoal); border-bottom: 2px solid var(--dmo-red); padding-bottom: 0.4rem; }
+.section-h, .hub-h2 { font-size: 1.5rem; }
+
+/* Links: DMO red, always underlined (GOV.UK) */
+a { color: var(--dmo-red); }
+a:visited { color: var(--dmo-red-dark); }
+a:hover { color: var(--dmo-red-dark); }
+.btn, .btn:visited { color: #fff; }
+
+/* GOV.UK focus state, in yellow ------------------------------------------ */
+:focus-visible { outline: 3px solid transparent; outline-offset: 0; box-shadow: none; }
+a:focus-visible, .sort-btn:focus-visible, .btn-link:focus-visible, details.details summary:focus-visible, .back-link:focus-visible {
+  background: var(--dmo-focus); color: var(--dmo-focus-text) !important; text-decoration: none;
+  box-shadow: 0 -2px var(--dmo-focus), 0 4px var(--dmo-focus-text);
+}
+.btn:focus-visible, button:focus-visible, .chip:focus-visible, .seg button:focus-visible {
+  outline: 3px solid var(--dmo-focus); outline-offset: 0; box-shadow: inset 0 0 0 1px var(--dmo-focus), 0 4px 0 var(--dmo-focus-text);
+}
+input:focus-visible, select:focus-visible, textarea:focus-visible, input:focus, select:focus {
+  outline: 3px solid var(--dmo-focus); outline-offset: 0; box-shadow: inset 0 0 0 2px var(--dmo-focus-text);
+}
+.radio input:focus-visible, .check input:focus-visible { outline: 3px solid var(--dmo-focus); box-shadow: 0 0 0 6px var(--dmo-focus-text); }
+
+/* Prototype navigator: the DMO's charcoal nav bar --------------------------- */
+header.sticky.proto-nav { background: linear-gradient(var(--dmo-charcoal), var(--dmo-ink)); border-bottom: 0; color: #fff; }
+.proto-nav .proto-home, .proto-nav .proto-home:visited { color: #fff; font-weight: 700; border-left: 3px solid var(--dmo-red); padding-left: 0.6rem; line-height: 1.2; }
+.proto-nav .proto-home span { color: var(--dmo-mist); }
+.proto-nav .proto-links a, .proto-nav .proto-links a:visited { color: #fff; font-weight: 700; font-size: 0.9375rem; border-bottom-width: 4px; }
+.proto-nav .proto-links a:hover { color: #fff; text-decoration: underline; text-decoration-thickness: 2px; }
+.proto-nav .proto-links a[aria-current="page"] { border-bottom-color: var(--dmo-red); }
+.proto-nav .proto-links .n { border-color: var(--dmo-mist); }
+.proto-nav .proto-links a[aria-current="page"] .n { background: var(--dmo-red); border-color: var(--dmo-red); }
+.proto-nav .proto-links a:focus-visible { box-shadow: inset 0 -4px var(--dmo-focus-text); }
+.proto-nav .proto-links a:focus-visible .n { border-color: var(--dmo-focus-text); }
+.notes-toggle { background: transparent; color: #fff; border-color: var(--dmo-graphite); border-radius: 999px; }
+.notes-track { background: var(--dmo-graphite); }
+.notes-toggle[aria-checked="true"] .notes-track { background: var(--dmo-red); }
+.skip-link { background: var(--dmo-focus); color: var(--dmo-focus-text); font-weight: 700; }
+
+/* Footer pager: charcoal, as the DMO footer -------------------------------- */
+.proto-footer { background: var(--dmo-charcoal); border-top: 0; color: var(--dmo-mist); padding: 2.5rem 0 2rem; }
+.proto-footer .wf-meta { color: var(--dmo-mist); }
+.proto-pager a, .proto-pager a:visited { background: transparent; border: 1px solid var(--dmo-graphite); color: #fff; }
+.proto-pager a .wf-meta { color: var(--dmo-mist); font-weight: 400; }
+.proto-pager a:hover { border-color: #fff; color: #fff; }
+
+/* Buttons: DMO red, square, GOV.UK shadow -------------------------------- */
+.btn { background: var(--dmo-red); border: 0; border-radius: 0; font-weight: 700; padding: 0.625rem 1.125rem; box-shadow: 0 2px 0 var(--dmo-red-dark); line-height: 1.25; }
+.btn:hover { background: var(--dmo-red-dark); }
+.btn:active { transform: translateY(2px); box-shadow: none; }
+.btn-secondary, .btn-secondary:visited { background: var(--dmo-tint); color: var(--dmo-ink); box-shadow: 0 2px 0 #929191; }
+.btn-secondary:hover { background: #DBDAD9; color: var(--dmo-ink); }
+.btn-link { color: var(--dmo-red); }
+
+/* Forms: GOV.UK proportions ---------------------------------------------- */
+label, legend { color: var(--dmo-ink); font-weight: 700; }
+.date-input label, .radio, .check { font-weight: 400; }
+input[type="text"], input[type="email"], input[type="search"], input[type="number"], select, textarea {
+  border: 2px solid var(--dmo-ink); border-radius: 0; min-height: 2.5rem; font-family: var(--dmo-font); font-size: 1.0625rem;
+}
+.input-prefix span, .input-suffix span { border: 2px solid var(--dmo-ink); background: var(--dmo-tint); font-weight: 700; }
+.input-prefix span { border-right: 0; }
+.input-suffix span { border-left: 0; }
+.field-hint, .radio .hint { color: var(--dmo-secondary); font-size: 1rem; }
+.field-error { color: var(--dmo-red); font-weight: 700; }
+.field.has-error { border-left-color: var(--dmo-red); }
+input.is-error { border-color: var(--dmo-red) !important; }
+input[type="radio"], input[type="checkbox"] { accent-color: var(--dmo-ink); }
+.error-summary { border-color: var(--dmo-red); }
+.error-summary a, .error-summary a:visited { color: var(--dmo-red); }
+.filter-panel { background: var(--dmo-ground); border: 0; border-top: 4px solid var(--dmo-charcoal); }
+
+/* Chips and segmented control ---------------------------------------------- */
+.chip { border: 2px solid var(--dmo-charcoal); border-radius: 0; color: var(--dmo-charcoal); font-weight: 700; }
+.chip[aria-pressed="true"] { background: var(--dmo-charcoal); color: #fff; border-color: var(--dmo-charcoal); box-shadow: none; }
+.seg { border: 2px solid var(--dmo-charcoal); border-radius: 0; }
+.seg button { font-weight: 700; }
+.seg button + button { border-left: 2px solid var(--dmo-charcoal); }
+.seg button[aria-pressed="true"] { background: var(--dmo-charcoal); color: #fff; }
+
+/* Breadcrumb ------------------------------------------------------------------ */
+.breadcrumb { font-size: 1rem; padding: 1rem 0 1.25rem; }
+.breadcrumb-item { color: var(--dmo-secondary); }
+
+/* Tables ---------------------------------------------------------------------- */
+.data-table { font-size: 1rem; }
+.data-table caption { font-size: 1.1875rem; color: var(--dmo-charcoal); }
+.data-table thead th { border-bottom: 2px solid var(--dmo-charcoal); }
+.data-table th, .data-table td { border-bottom-color: var(--dmo-mist); }
+.data-table tbody tr:hover { background: var(--dmo-ground); }
+.data-table tfoot td, .data-table tfoot th { border-top-color: var(--dmo-charcoal); }
+.sort-btn { color: var(--dmo-red); }
+th[aria-sort="ascending"] .sort-btn::after, th[aria-sort="descending"] .sort-btn::after { color: var(--dmo-red); }
+
+/* Tags: GOV.UK tag colours ---------------------------------------------------- */
+.tag { border: 0; padding: 0.25rem 0.5rem; font-weight: 700; background: #F4CDC6; color: #2A0B06; }
+.tag.solid { background: var(--dmo-success-bg); color: var(--dmo-success); }
+.tag.grey { background: var(--dmo-tint); color: var(--dmo-ink); }
+.tag.sample { background: transparent; border: 1px dashed var(--dmo-secondary); color: var(--dmo-secondary); font-weight: 400; }
+
+/* Stamp, inset, details --------------------------------------------------------- */
+.stamp { background: var(--dmo-ground); border-left: 5px solid var(--dmo-charcoal); }
+.inset { border-left-color: var(--dmo-rule); }
+details.details summary { color: var(--dmo-red); }
+details.details .details-text { border-left-color: var(--dmo-rule); }
+
+/* Notification banner: charcoal title, as the DMO nav ---------------------------- */
+.notice { border-color: var(--dmo-charcoal); border-width: 5px; }
+.notice-title { background: var(--dmo-charcoal); font-size: 1rem; }
+.notice-body h2, .notice-body h3 { border: 0; padding: 0; }
+
+/* Key figures and the next operations strip --------------------------------------- */
+.key-figures { border: 0; gap: 1rem; }
+.key-figures > div { background: var(--dmo-ground); border: 0; border-top: 4px solid var(--dmo-red); padding: 1.125rem 1.25rem 1.25rem; }
+.key-figures b { font-size: 2.125rem; color: var(--dmo-charcoal); }
+.ops-strip li { border: 0; border-top: 4px solid var(--dmo-charcoal); background: var(--dmo-ground); }
+.ops-strip .d { color: var(--dmo-charcoal); }
+
+/* Task links, cards, related ---------------------------------------------------- */
+.task-grid h3 { color: var(--dmo-red); border-bottom: 0; font-size: 1.1875rem; }
+.related { border-top: 4px solid var(--dmo-red); }
+.related h2 { border: 0; padding: 0; }
+.panel { border-radius: 0; }
+.panel.surface { background: var(--dmo-ground); border: 0; }
+.cat-list li { border-bottom-color: var(--dmo-mist); }
+
+/* Charts --------------------------------------------------------------------------- */
+.hbar .track { background: #E8E8E8; border-radius: 0; }
+.hbar .fill { background: var(--dmo-charcoal); }
+.legend i { background: var(--dmo-charcoal); }
+.legend i.alt { background: #E8E8E8; border: 0; }
+
+/* Timeline and step-by-step --------------------------------------------------------- */
+.timeline { border-left-color: var(--dmo-mist); }
+.timeline li::before { border-color: var(--dmo-rule); }
+.timeline li.done::before { background: var(--dmo-red); border-color: var(--dmo-red); }
+.step-by-step > li { border-left-color: var(--dmo-rule); }
+.step-by-step > li::before { border-color: var(--dmo-charcoal); background: #fff; color: var(--dmo-charcoal); }
+.step-by-step h2 { border: 0; }
+.stepper li { border-top-color: var(--dmo-mist); }
+.stepper li.current { border-top-color: var(--dmo-red); }
+.stepper li.done { border-top-color: var(--dmo-charcoal); }
+
+/* Question pages and result panels -------------------------------------------------- */
+.question legend h1, .question h1 { font-size: 2.25rem; }
+.panel-confirm { background: var(--dmo-success-bg); border: 0; border-left: 8px solid var(--dmo-success); }
+.panel-confirm h1, .panel-confirm h2 { color: var(--dmo-success); }
+.panel-confirm.no { background: var(--dmo-tint); border-left-color: var(--dmo-red); border-style: solid; }
+.panel-confirm.no h1, .panel-confirm.no h2 { color: var(--dmo-charcoal); }
+.result-card { border: 0; border-top: 6px solid var(--dmo-red); background: var(--dmo-ground); border-radius: 0; }
+.result-card .big { color: var(--dmo-charcoal); }
+.summary-list > div { border-bottom-color: var(--dmo-mist); }
+
+/* Attachments: a document thumbnail with the format in DMO red ------------------------ */
+.attachment .thumb { background: #fff; border: 1px solid var(--dmo-rule); border-radius: 0; color: var(--dmo-red); font-weight: 700; letter-spacing: 0.06em; box-shadow: 3px 3px 0 var(--dmo-mist); }
+
+/* Modal and toast ------------------------------------------------------------------------ */
+.wf-modal-panel { border-radius: 0; border-top: 6px solid var(--dmo-red); }
+.toast { background: var(--dmo-charcoal); border-left: 5px solid var(--dmo-red); border-radius: 0; }
+
+/* The DMO wordmark, drawn in CSS in place of the logo placeholder. The Royal Arms is not
+   reproduced; the real logo file replaces this in build. */
+.wf-placeholder.logo { width: auto; height: auto; background: none; border: 0; border-left: 3px solid var(--dmo-red); padding: 0.1rem 0 0.1rem 0.75rem; font-size: 0; letter-spacing: 0; text-transform: none; justify-content: flex-start; color: var(--dmo-ink); }
+.wf-placeholder.logo::before { content: 'United Kingdom\A Debt Management\A Office'; white-space: pre; font: 400 1.1875rem/1.1 var(--dmo-font); text-align: left; }
+
+/* Landing page: a charcoal band, like the DMO's nav and footer ---------------------------- */
+body.hub .hub-hero { background: linear-gradient(160deg, var(--dmo-charcoal), var(--dmo-ink) 70%); color: #fff; border-bottom: 6px solid var(--dmo-red); padding: 3.5rem 0 3rem; }
+body.hub .hub-hero h1 { color: #fff; font-size: clamp(2.25rem, 5vw, 3.25rem); }
+body.hub .hub-hero .lead { color: var(--dmo-mist); font-size: 1.25rem; }
+body.hub .hub-hero .wf-placeholder.logo { color: #fff; }
+body.hub .hub-by { color: var(--dmo-mist); }
+body.hub .wf-hub-meta span { border-color: var(--dmo-graphite); color: var(--dmo-mist); border-radius: 0; }
+.proto-card { border: 0; border-radius: 0; background: var(--dmo-ground); }
+.proto-card:hover { box-shadow: inset 0 -4px 0 var(--dmo-red); }
+.proto-thumb .wf-placeholder { background: var(--dmo-charcoal); color: #fff; border: 0; border-left: 6px solid var(--dmo-red); font: 700 1.25rem/1.2 var(--dmo-font); letter-spacing: 0; text-transform: none; justify-content: flex-start; align-items: flex-end; padding: 1.25rem; }
+.proto-num { border: 0; background: var(--dmo-red); color: #fff; }
+.proto-body h3 { border: 0; }
+.proto-body h3 a, .proto-body h3 a:visited { color: var(--dmo-charcoal); }
+.proto-body h3 a:hover { color: var(--dmo-red); }
+.proto-try { color: var(--dmo-secondary); }
+.hub-links li { border-bottom-color: var(--dmo-mist); }
+
+/* Annotation layer: kept visibly separate from the design ---------------------------------- */
+.proposal { background: #FFF7BF; border-bottom: 2px solid #B39B00; }
+.proposal h2 { border: 0; padding: 0; }
+.wf-note { border-radius: 0; }
+
+/* Controls that sit in a row share one height and baseline */
+input[type="text"], input[type="email"], input[type="search"], input[type="number"], select { height: 2.75rem; min-height: 0; padding-top: 0; padding-bottom: 0; }
+.date-input .btn, .filter-panel .btn, .copy-row .btn, form.row .btn { height: 2.75rem; padding-top: 0; padding-bottom: 0; display: inline-flex; align-items: center; }
+.input-prefix span, .input-suffix span { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
