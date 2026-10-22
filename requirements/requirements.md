@@ -55,6 +55,40 @@ Standards in scope throughout: WCAG 2.2 AA and the Public Sector Bodies Accessib
 - **R52** "Apply for a PWLB loan" as a step-by-step page with one stable link to the current form. *(idea 35)*
 - **R53** Descriptive link text and consistently formatted phone numbers. *(ideas 33, 34)*
 
+## Quick wins tab
+
+- **RQ00** Two-tab model: the landing page and navigator switch between "Big improvements" (the five concepts) and "Quick wins". Each tab has its own overview, and the pager stays within the current tab. No estimates, prices or effort labels anywhere in the model.
+
+Each quick win is a single, standalone demo showing "Today" (rebuilt from the live site) next to "Proposed", with a Notes panel.
+
+| Quick win | Title | Phase 1 idea |
+|---|---|---|
+| **RQ01** · QW1 | CSV and open-format downloads | 2 |
+| **RQ02** · QW2 | Show when the data is as at | 6 |
+| **RQ03** · QW3 | A GOV.UK date input on report pages | 7 |
+| **RQ04** · QW4 | The remit figures on the Remit page | 8 |
+| **RQ05** · QW5 | Next operations on the homepage | 10 |
+| **RQ06** · QW6 | A banner for live consultations | 15 |
+| **RQ07** · QW7 | Sensible defaults on Publications | 17 |
+| **RQ08** · QW8 | Tidy the publication type list | 18 |
+| **RQ09** · QW9 | Say the file type on every link | 21 |
+| **RQ10** · QW10 | Mark up the Publications table properly | 22 |
+| **RQ11** · QW11 | One date style | 23 |
+| **RQ12** · QW12 | Update the money laundering reference | 26 |
+| **RQ13** · QW13 | Remove the drafting brackets | 27 |
+| **RQ14** · QW14 | Explain terms where they appear | 29 |
+| **RQ15** · QW15 | Descriptive link text | 33 |
+| **RQ16** · QW16 | Write phone numbers one way | 34 |
+| **RQ17** · QW17 | An up-to-date accessibility statement | 36 |
+| **RQ18** · QW18 | Underline links | 37 |
+| **RQ19** · QW19 | A visible focus state | 38 |
+| **RQ20** · QW20 | Plain navigation markup | 39 |
+| **RQ21** · QW21 | An H1 that names the page | 40 |
+| **RQ22** · QW22 | A clear type scale | 45 |
+| **RQ23** · QW23 | Name the homepage | 47 |
+
+Small-effort ideas left out of the quick-wins tab: 28 (eligibility check, shown in full in concept 4) and 44 (loading the fonts once, which has no visible change and is better treated as housekeeping alongside other work).
+
 ## Open questions (shown in the prototypes as red notes)
 
 - Q1 Who owns the report engine behind the D-codes, and could it publish HTML tables and an API?

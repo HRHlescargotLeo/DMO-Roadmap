@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW21: An H1 that names the page – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 21 of 23 · An H1 that names the page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Make every page's H1 name that page, show the section as a caption above it, and give each page a matching title in the browser tab.</p></div>
+          <div><h2>Why</h2><p>On the Gilts in Issue page the main heading is "Gilt Market", the name of the section, so every page in the section shares one H1. Screen reader users often navigate by headings, and search engines lean on them too.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ21, idea 40) -->
+      <span class="caption">Quick win 21</span>
+      <h1 class="page-title">An H1 that names the page</h1>
+      <p class="page-intro">Each page's main heading names that page, with the section shown above it.</p>
+      <p class="proto-try"><strong>Try:</strong> Compare the main heading on the Gilts in Issue page.</p>
+
+      <!-- Today and proposed (RQ21) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <p class="today-crumb">Home · Data · Gilt Market · Gilts in Issue</p><p class="today-h1">Gilt Market</p><p class="mb-0"><b>Gilts in Issue</b></p>
+          </div>
+          <p class="compare-cap">Gilts in Issue today: the H1 is the section name.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <span class="caption">Gilt market data</span><p class="page-title qw-h1">Gilts in issue</p>
+          </div>
+          <p class="compare-cap">Section as a caption, page as the H1.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

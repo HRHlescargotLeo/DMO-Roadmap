@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW14: Explain terms where they appear – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 14 of 23 · Explain terms where they appear</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Add short, expandable explanations next to the terms retail readers are least likely to know, using the GOV.UK details component, and keep the glossary for reference.</p></div>
+          <div><h2>Why</h2><p>The retail pages use terms such as nominal, accrued interest and ex-dividend and send readers to a separate glossary page to look them up. For an expert that is fine. For someone who has inherited a gilt certificate, it means leaving the page to understand it.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ14, idea 29) -->
+      <span class="caption">Quick win 14</span>
+      <h1 class="page-title">Explain terms where they appear</h1>
+      <p class="page-intro">Short explanations that open in place, instead of a trip to the glossary.</p>
+      <p class="proto-try"><strong>Try:</strong> Find out what "nominal" means in each version.</p>
+
+      <!-- Today and proposed (RQ14) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <p>The price you pay is quoted per £100 nominal and excludes accrued interest. Gilts bought in the ex-dividend period do not receive the next interest payment.</p><p class="mb-0"><a href="#" class="today-link">Glossary of terms relating to gilts</a></p>
+          </div>
+          <p class="compare-cap">Retail pages today: terms link away to the glossary. Wording illustrative.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <p>The price you pay is quoted per £100 nominal and excludes accrued interest. Gilts bought in the ex-dividend period do not receive the next interest payment.</p>
+<details class="details"><summary>What does "nominal" mean?</summary><div class="details-text">The amount the government repays when the gilt redeems. It's printed on your certificate and is usually different from what you paid.</div></details>
+<details class="details"><summary>What is the ex-dividend period?</summary><div class="details-text">A short period before each interest payment. If you buy during it, the interest goes to the previous owner.</div></details>
+          </div>
+          <p class="compare-cap">The same text with explanations in place.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

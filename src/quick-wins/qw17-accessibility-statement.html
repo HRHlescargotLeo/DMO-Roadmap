@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW17: An up-to-date accessibility statement – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 17 of 23 · An up-to-date accessibility statement</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Audit the main templates against WCAG 2.2 AA, then rewrite the statement with what fails, a plan with dates for fixing it, how the site was tested, and a yearly review.</p></div>
+          <div><h2>Why</h2><p>The statement was prepared on 8 November 2021, last reviewed on 21 April 2023, and measures the site against WCAG 2.1. The Government Digital Service has monitored public sector sites against WCAG 2.2 since October 2024, and the regulations expect statements to be kept up to date. Testing is a weekly automated scan of 125 pages, which catches a good deal but not everything.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ17, idea 36) -->
+      <span class="caption">Quick win 17</span>
+      <h1 class="page-title">An up-to-date accessibility statement</h1>
+      <p class="page-intro">A statement reviewed against WCAG 2.2, with a dated plan for fixing what fails.</p>
+      <p class="proto-try"><strong>Try:</strong> Compare the standard and the review dates in each version.</p>
+
+      <!-- Today and proposed (RQ17) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <dl class="summary-list mb-0"><div><dt>Standard</dt><dd>WCAG 2.1 AA</dd></div><div><dt>Status</dt><dd>Partially compliant</dd></div><div><dt>Prepared</dt><dd>8 November 2021</dd></div><div><dt>Last reviewed</dt><dd>21 April 2023</dd></div><div><dt>How it was tested</dt><dd>Weekly automated scan of 125 pages</dd></div></dl>
+          </div>
+          <p class="compare-cap">The statement today, in summary.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <dl class="summary-list"><div><dt>Standard</dt><dd>WCAG 2.2 AA</dd></div><div><dt>Status</dt><dd>[Result of the audit]</dd></div><div><dt>Last reviewed</dt><dd>[Date of the audit]</dd></div><div><dt>How it was tested</dt><dd>Manual audit of the main templates with assistive technology, plus a weekly automated scan</dd></div><div><dt>Next review</dt><dd>[One year after the audit]</dd></div></dl>
+<div class="table-wrap"><table class="data-table"><caption>Plan for fixing known issues</caption><thead><tr><th scope="col">Issue</th><th scope="col">Fix by</th></tr></thead><tbody><tr><th scope="row">Links not underlined</th><td>[Date]</td></tr><tr><th scope="row">Focus not visible on search at 200% zoom</th><td>[Date]</td></tr><tr><th scope="row">Untagged PDFs</th><td>[Date]</td></tr></tbody></table></div>
+          </div>
+          <p class="compare-cap">What the reviewed statement would cover. Dates in brackets are placeholders.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

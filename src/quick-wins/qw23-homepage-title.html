@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW23: Name the homepage – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 23 of 23 · Name the homepage</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Change the homepage's page title from "Home" to "UK Debt Management Office", and set a title pattern for every page type ("Gilts in issue – UK Debt Management Office").</p></div>
+          <div><h2>Why</h2><p>The homepage's title is "Home". That is what appears in the browser tab, in bookmarks and in search engine results, and it is the first thing a screen reader announces when the page loads. It is about as small a change as a website can have.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ23, idea 47) -->
+      <span class="caption">Quick win 23</span>
+      <h1 class="page-title">Name the homepage</h1>
+      <p class="page-intro">The homepage titled "UK Debt Management Office" in browser tabs, bookmarks and search results.</p>
+      <p class="proto-try"><strong>Try:</strong> Compare the two browser tabs.</p>
+
+      <!-- Today and proposed (RQ23) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <div class="mock-tab"><span class="mock-fav" aria-hidden="true"></span>Home</div><p class="sr-says mb-0"><b>Screen reader on load:</b> "Home"</p>
+          </div>
+          <p class="compare-cap">The homepage in a browser tab today.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <div class="mock-tab"><span class="mock-fav" aria-hidden="true"></span>UK Debt Management Office</div><p class="sr-says mb-0"><b>Screen reader on load:</b> "UK Debt Management Office"</p>
+          </div>
+          <p class="compare-cap">The same tab with a proper title.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW1: CSV and open-format downloads – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 1 of 23 · CSV and open-format downloads</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Add CSV and OpenDocument (ODS) to every data report, label each download with its format and size, and drop Word for tables of figures. The report pages themselves stay as they are.</p></div>
+          <div><h2>Why</h2><p>The gilts in issue report offers PDF, Excel and Word. Word is an odd place to put a table of numbers, and CSV, which the Help page lists among the formats the site supports, isn't offered. Government's open standards expect data to be published in CSV or ODF, so this is as much about meeting the standard as about convenience.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ01, idea 2) -->
+      <span class="caption">Quick win 1</span>
+      <h1 class="page-title">CSV and open-format downloads</h1>
+      <p class="page-intro">Every data report offers CSV and OpenDocument alongside Excel, with format and size on each link.</p>
+      <p class="proto-try"><strong>Try:</strong> Compare the two sets of download options.</p>
+
+      <!-- Today and proposed (RQ01) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <p class="mb-0"><b>Export options</b></p><div class="today-export"><button type="button" class="btn">PDF</button><button type="button" class="btn">Excel</button><button type="button" class="btn">Word</button></div>
+          </div>
+          <p class="compare-cap">Report D1A: three buttons, format only.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <h3 class="qw-h">Download this data</h3><ul class="downloads">
+<li><a href="#" data-toast="Sample: CSV download.">Gilts in issue, 30 September 2026 (CSV, 4KB)</a></li>
+<li><a href="#" data-toast="Sample: ODS download.">Gilts in issue, 30 September 2026 (ODS, 12KB)</a></li>
+<li><a href="#" data-toast="Sample: Excel download.">Gilts in issue, 30 September 2026 (Excel XLSX, 14KB)</a></li>
+<li><a href="#" data-toast="Sample: PDF download.">Gilts in issue, 30 September 2026 (PDF, 88KB)</a></li></ul>
+          </div>
+          <p class="compare-cap">Downloads named, with format and size. Word is gone; CSV and ODS are added.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

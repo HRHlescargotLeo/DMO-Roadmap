@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW6: A banner for live consultations – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 6 of 23 · A banner for live consultations</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Show a notification banner on the homepage and the gilt market pages while a consultation or market notice is open, with the closing time, and take it down automatically when it closes.</p></div>
+          <div><h2>Why</h2><p>The consultation on the 7 October programmatic tender appears only as a line in the Latest News tab, between an auction announcement and a result. It has a deadline, and a line of news is easy to scroll past.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ06, idea 15) -->
+      <span class="caption">Quick win 6</span>
+      <h1 class="page-title">A banner for live consultations</h1>
+      <p class="page-intro">A GOV.UK notification banner on the homepage and gilt market pages while a consultation or notice is open.</p>
+      <p class="proto-try"><strong>Try:</strong> See how the 7 October tender consultation appears in each version.</p>
+
+      <!-- Today and proposed (RQ06) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <ul class="today-list"><li>Consultation on a programmatic gilt tender for a conventional gilt on 7 October (30/09/2026)</li><li>Auction of £1,250 million of 1⅛% Index-linked Treasury Gilt 2035 (29/09/2026)</li></ul>
+          </div>
+          <p class="compare-cap">Homepage today: the consultation is one line among the news.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <div class="notice" role="region" aria-labelledby="qw6-n"><div class="notice-title" id="qw6-n">Consultation open</div><div class="notice-body"><h3>Programmatic gilt tender on Wednesday 7 October</h3><p>The DMO is seeking views on which conventional gilt to offer. Responses by [closing time]. <a href="#">Read the consultation</a>.</p></div></div>
+          </div>
+          <p class="compare-cap">A banner with the closing time, set and removed by editors.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

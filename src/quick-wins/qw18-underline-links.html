@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW18: Underline links – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 18 of 23 · Underline links</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Underline every link in content and tables and colour them in the DMO red, with a thicker underline on hover.</p></div>
+          <div><h2>Why</h2><p>Links in the Publications table are the same near-black as the text around them, with no underline, so nothing but their position says they are links. WCAG asks that colour isn't the only way to tell a link apart, and here there isn't even colour.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ18, idea 37) -->
+      <span class="caption">Quick win 18</span>
+      <h1 class="page-title">Underline links</h1>
+      <p class="page-intro">Links underlined in DMO red, so they never depend on colour alone.</p>
+      <p class="proto-try"><strong>Try:</strong> Find the links in each version without moving your mouse.</p>
+
+      <!-- Today and proposed (RQ18) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <div class="table-wrap"><table class="data-table today-table"><tbody><tr><td>Publication title</td><td>Size</td><td>Date published</td></tr><tr><td><a href="#" class="today-link">DMO seeks views on the scheduling of a programmatic gilt tender on Wednesday 7 October for a conventional gilt</a></td><td>96.8KB</td><td>30-September-2026</td></tr><tr><td><a href="#" class="today-link">Auction of £1,250 million of 1⅛% Index-linked Treasury Gilt 2035</a></td><td>123.5KB</td><td>29-September-2026</td></tr><tr><td><a href="#" class="today-link">Result of the Sale By Auction of £4,250 million of 4⅞% Treasury Gilt 2036</a></td><td>67.2KB</td><td>29-September-2026</td></tr></tbody></table></div>
+          </div>
+          <p class="compare-cap">Publications today: links look like body text.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <div class="table-wrap"><table class="data-table today-table"><tbody><tr><td>Publication title</td><td>Size</td><td>Date published</td></tr><tr><td><a href="#" class="">DMO seeks views on the scheduling of a programmatic gilt tender on Wednesday 7 October for a conventional gilt</a></td><td>96.8KB</td><td>30-September-2026</td></tr><tr><td><a href="#" class="">Auction of £1,250 million of 1⅛% Index-linked Treasury Gilt 2035</a></td><td>123.5KB</td><td>29-September-2026</td></tr><tr><td><a href="#" class="">Result of the Sale By Auction of £4,250 million of 4⅞% Treasury Gilt 2036</a></td><td>67.2KB</td><td>29-September-2026</td></tr></tbody></table></div>
+          </div>
+          <p class="compare-cap">The same rows with underlined links.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

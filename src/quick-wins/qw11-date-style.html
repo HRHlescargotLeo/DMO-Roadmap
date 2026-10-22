@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW11: One date style – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 11 of 23 · One date style</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Write every date the same way, "30 September 2026", as the GOV.UK style guide sets out, in lists, tables, news and documents.</p></div>
+          <div><h2>Why</h2><p>The Publications table writes dates as "30-September-2026". The homepage news uses "(30/09/2026)", and the report pages take "30/09/2026". Three styles on three pages is a small thing, but it is the kind of small thing people notice on a site whose job is precision.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ11, idea 23) -->
+      <span class="caption">Quick win 11</span>
+      <h1 class="page-title">One date style</h1>
+      <p class="page-intro">Every date written as "30 September 2026".</p>
+      <p class="proto-try"><strong>Try:</strong> Count the date formats in the current version.</p>
+
+      <!-- Today and proposed (RQ11) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <dl class="summary-list"><div><dt>Publications</dt><dd>30-September-2026</dd></div><div><dt>Homepage news</dt><dd>(30/09/2026)</dd></div><div><dt>Report pages</dt><dd>30/09/2026</dd></div></dl>
+          </div>
+          <p class="compare-cap">Three date styles seen on the live site.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <dl class="summary-list"><div><dt>Publications</dt><dd>30 September 2026</dd></div><div><dt>Homepage news</dt><dd>30 September 2026</dd></div><div><dt>Report pages</dt><dd>30 September 2026</dd></div></dl>
+          </div>
+          <p class="compare-cap">One style everywhere.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

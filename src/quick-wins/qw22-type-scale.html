@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW22: A clear type scale – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 22 of 23 · A clear type scale</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Adopt a stepped type scale (36, 27, 22, 19, 16 and 14 pixels) so page titles lead and section headings sit clearly below them, in proportions close to the GOV.UK scale.</p></div>
+          <div><h2>Why</h2><p>The homepage heading, "The DMO is an Executive Agency of HM Treasury", is set at 22px, and the paragraph beneath it at 24px, so the heading is the smaller of the two. H1s and H2s across the site are both 22px.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ22, idea 45) -->
+      <span class="caption">Quick win 22</span>
+      <h1 class="page-title">A clear type scale</h1>
+      <p class="page-intro">Page titles larger than the text beneath them, in a stepped scale.</p>
+      <p class="proto-try"><strong>Try:</strong> Compare the size of the heading and the paragraph under it.</p>
+
+      <!-- Today and proposed (RQ22) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <p class="today-h22">The DMO is an Executive Agency of HM Treasury.</p><p class="today-p24 mb-0">We are responsible for debt and cash management for the UK Government, lending to local authorities and managing certain public sector funds.</p>
+          </div>
+          <p class="compare-cap">Homepage today: a 22px heading over a 24px paragraph.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <p class="page-title qw-h1">The DMO is an Executive Agency of HM Treasury</p><p class="page-intro mb-0">We are responsible for debt and cash management for the UK Government, lending to local authorities and managing certain public sector funds.</p>
+          </div>
+          <p class="compare-cap">The same words on the proposed scale.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

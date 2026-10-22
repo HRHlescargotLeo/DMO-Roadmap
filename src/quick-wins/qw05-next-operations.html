@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW5: Next operations on the homepage – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 5 of 23 · Next operations on the homepage</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Add a "Next gilt operations" strip to the homepage, under the introduction, showing the next three or four operations from the calendar, each linking to its announcement.</p></div>
+          <div><h2>Why</h2><p>The homepage has Latest News and Most Popular tabs and a card for the Gilt Operations Calendar, but nowhere on it does it say when the next auction is. For the people who use the site most, that is probably the first question. The strip reads from the same calendar data, so nobody has to maintain it by hand.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ05, idea 10) -->
+      <span class="caption">Quick win 5</span>
+      <h1 class="page-title">Next operations on the homepage</h1>
+      <p class="page-intro">A strip on the homepage showing the next gilt operations: date, gilt, method and size.</p>
+      <p class="proto-try"><strong>Try:</strong> Find out when the next auction is in each version.</p>
+
+      <!-- Today and proposed (RQ05) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <div class="today-tabs"><span class="on">Latest News</span><span>Most Popular</span></div><ul class="today-list"><li>Consultation on a programmatic gilt tender for a conventional gilt on 7 October (30/09/2026)</li><li>Auction of £1,250 million of 1⅛% Index-linked Treasury Gilt 2035 (29/09/2026)</li><li>Result of the Sale By Auction of £4,250 million of 4⅞% Treasury Gilt 2036 (29/09/2026)</li></ul>
+          </div>
+          <p class="compare-cap">Homepage today: news headlines, but no upcoming dates.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <h3 class="qw-h">Next gilt operations</h3><ul class="ops-strip qw-ops" id="home-ops"></ul>
+          </div>
+          <p class="compare-cap">A strip of the next operations. Dates after 7 October are sample.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW3: A GOV.UK date input on report pages – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 3 of 23 · A GOV.UK date input on report pages</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Replace the single dd/mm/yyyy field and its pop-up calendar on the report pages with the GOV.UK date input: three labelled boxes, a hint with an example, and error messages that say what to fix.</p></div>
+          <div><h2>Why</h2><p>Today's field is labelled "Gilts in issue at COB:*", which assumes the reader knows COB means close of business, and the calendar pop-up's Cancel and OK buttons are set in 11.9px text. The GOV.UK pattern has been tested with a wide range of users, including people using screen readers and voice control, and it fails politely when someone gets a date wrong.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ03, idea 7) -->
+      <span class="caption">Quick win 3</span>
+      <h1 class="page-title">A GOV.UK date input on report pages</h1>
+      <p class="page-intro">Day, month and year boxes with a hint and clear error messages, in place of the single date field and pop-up calendar.</p>
+      <p class="proto-try"><strong>Try:</strong> Enter 31 2 2026 in the proposed version, then press the button.</p>
+
+      <!-- Today and proposed (RQ03) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <div class="today-date"><label for="qwt-cob">Gilts in issue at COB:*</label><input type="text" id="qwt-cob" value="30/09/2026"><span class="today-cal" aria-hidden="true">▦</span></div>
+          </div>
+          <p class="compare-cap">Report D1A: one field, an abbreviation and a calendar icon.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <div class="error-summary" id="qwd-errors" tabindex="-1" role="alert" hidden><h2>There is a problem</h2><ul></ul></div>
+<form id="qwd-form" novalidate><div class="field" id="qwd-field"><fieldset role="group" aria-describedby="qwd-hint"><legend>Show gilts in issue at close of business on</legend>
+<p class="field-hint" id="qwd-hint">For example, 27 3 2026</p>
+<div class="date-input"><div class="field"><label for="qwd-day">Day</label><input type="text" id="qwd-day" inputmode="numeric" value="30"></div>
+<div class="field"><label for="qwd-month">Month</label><input type="text" id="qwd-month" inputmode="numeric" value="9"></div>
+<div class="field yyyy"><label for="qwd-year">Year</label><input type="text" id="qwd-year" inputmode="numeric" value="2026"></div>
+<button type="submit" class="btn">Show gilts in issue</button></div></fieldset></div></form>
+          </div>
+          <p class="compare-cap">Three boxes, a hint and an error summary. It works: try a date that doesn't exist.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

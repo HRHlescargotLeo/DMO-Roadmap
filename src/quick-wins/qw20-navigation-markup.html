@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW20: Plain navigation markup – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 20 of 23 · Plain navigation markup</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Mark up the main menu as a plain list of links inside a navigation landmark, and give the section menu's toggles their section name with an expanded or collapsed state.</p></div>
+          <div><h2>Why</h2><p>The main menu uses the ARIA "tree" role, which screen readers announce as a tree view, the pattern used for file browsers. The section menu toggles read out as "Toggle Gilt Market button expanded", with the state written into the name. Neither stops anyone using the site, but both make it slower and stranger than it needs to be.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ20, idea 39) -->
+      <span class="caption">Quick win 20</span>
+      <h1 class="page-title">Plain navigation markup</h1>
+      <p class="page-intro">Menus that screen readers announce as navigation, not as a tree view.</p>
+      <p class="proto-try"><strong>Try:</strong> Compare what a screen reader announces for the same menu.</p>
+
+      <!-- Today and proposed (RQ20) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <div class="mock-nav"><span>Responsibilities</span><span>Publications</span><span>Calendars</span><span>Investor Information</span><span>Data</span></div><ul class="sr-list"><li>"Tree view. Responsibilities, tree item, 1 of 5"</li><li>"Toggle Gilt Market button expanded, link"</li></ul>
+          </div>
+          <p class="compare-cap">What a screen reader announces today.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <div class="mock-nav"><span>Responsibilities</span><span>Publications</span><span>Calendars</span><span>Investor Information</span><span>Data</span></div><ul class="sr-list"><li>"Main navigation. List, 5 items. Responsibilities, link"</li><li>"Gilt Market, button, expanded"</li></ul>
+          </div>
+          <p class="compare-cap">What it would announce with plain markup.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

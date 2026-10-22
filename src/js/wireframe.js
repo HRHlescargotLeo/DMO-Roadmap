@@ -261,23 +261,36 @@
     apply();
   }
 
-  /* --- Prototype navigator: current page and previous / next ------------- */
+  /* --- Prototype navigator: two tabs, current page and previous / next ---
+     The navigator holds two sets of links: the big improvements and the
+     quick wins. <body data-tab="qw"> marks a quick-win page; everything else
+     belongs to the big improvements. Only the current tab's set is shown,
+     and the pager stays within it. */
   function initProtoNav() {
+    var tab = document.body.getAttribute('data-tab') || 'big';
+    document.querySelectorAll('[data-proto-set]').forEach(function (set) {
+      set.hidden = set.getAttribute('data-proto-set') !== tab;
+    });
+    document.querySelectorAll('[data-proto-tab]').forEach(function (t) {
+      if (t.getAttribute('data-proto-tab') === tab) t.setAttribute('aria-current', 'true');
+      else t.removeAttribute('aria-current');
+    });
     var file = (window.location.pathname.split('/').pop() || 'index.html').replace('.html', '') || 'index';
-    var links = Array.prototype.slice.call(document.querySelectorAll('.proto-links a[data-proto]'));
+    var set = document.querySelector('[data-proto-set="' + tab + '"]') || document;
+    var links = Array.prototype.slice.call(set.querySelectorAll('.proto-links a[data-proto]'));
     var index = -1;
     links.forEach(function (a, i) {
       var match = a.getAttribute('data-proto').split(' ').indexOf(file) !== -1;
       if (match) { a.setAttribute('aria-current', 'page'); index = i; }
     });
-    var current = document.querySelector('.proto-links a[aria-current]');
-    if (current && current.scrollIntoView && window.innerWidth < 1024) {
+    var current = set.querySelector('.proto-links a[aria-current]');
+    if (current && window.innerWidth < 1280) {
       var list = current.closest('.proto-links');
       if (list) list.scrollLeft = current.offsetLeft - 16;
     }
     var pager = document.querySelector('[data-proto-pager]');
     if (!pager || index < 0) return;
-    function label(a) { return a.textContent.replace(/\s+/g, ' ').trim(); }
+    function label(a) { return a.getAttribute('data-label') || a.textContent.replace(/\s+/g, ' ').trim(); }
     var html = '';
     if (index > 0) html += '<a class="prev" href="' + links[index - 1].getAttribute('href') + '"><span class="wf-meta">Previous</span>' + label(links[index - 1]) + '</a>';
     else html += '<span></span>';

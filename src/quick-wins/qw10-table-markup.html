@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW10: Mark up the Publications table properly – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 10 of 23 · Mark up the Publications table properly</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Rebuild the Publications table with header cells, a caption and column scopes. It looks almost the same; it sounds very different.</p></div>
+          <div><h2>Why</h2><p>The header row is built from ordinary cells, and the table has no caption. A screen reader user moving along a row hears the values without the column names, so "96.8KB" and "30-September-2026" arrive with no context.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ10, idea 22) -->
+      <span class="caption">Quick win 10</span>
+      <h1 class="page-title">Mark up the Publications table properly</h1>
+      <p class="page-intro">Real header cells and a caption, so screen readers can announce the table properly.</p>
+      <p class="proto-try"><strong>Try:</strong> Compare what a screen reader announces for the same row.</p>
+
+      <!-- Today and proposed (RQ10) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <div class="table-wrap"><table class="data-table today-table"><tbody><tr><td>Publication title</td><td>Size</td><td>Date published</td></tr><tr><td><a href="#" class="today-link">DMO seeks views on the scheduling of a programmatic gilt tender on Wednesday 7 October for a conventional gilt</a></td><td>96.8KB</td><td>30-September-2026</td></tr><tr><td><a href="#" class="today-link">Auction of £1,250 million of 1⅛% Index-linked Treasury Gilt 2035</a></td><td>123.5KB</td><td>29-September-2026</td></tr><tr><td><a href="#" class="today-link">Result of the Sale By Auction of £4,250 million of 4⅞% Treasury Gilt 2036</a></td><td>67.2KB</td><td>29-September-2026</td></tr></tbody></table></div><p class="sr-says"><b>Screen reader:</b> "96.8KB"</p>
+          </div>
+          <p class="compare-cap">Publications today, and what a screen reader says on the second cell of a row.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <div class="table-wrap"><table class="data-table"><caption>Publications, newest first</caption><thead><tr><th scope="col">Publication title</th><th scope="col">Size</th><th scope="col">Date published</th></tr></thead><tbody><tr><th scope="row"><a href="#">DMO seeks views on the scheduling of a programmatic gilt tender on Wednesday 7 October for a conventional gilt</a></th><td>96.8KB</td><td>30 September 2026</td></tr><tr><th scope="row"><a href="#">Auction of £1,250 million of 1⅛% Index-linked Treasury Gilt 2035</a></th><td>123.5KB</td><td>29 September 2026</td></tr><tr><th scope="row"><a href="#">Result of the Sale By Auction of £4,250 million of 4⅞% Treasury Gilt 2036</a></th><td>67.2KB</td><td>29 September 2026</td></tr></tbody></table></div><p class="sr-says"><b>Screen reader:</b> "Size, 96.8KB"</p>
+          </div>
+          <p class="compare-cap">The same table with headers and a caption.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

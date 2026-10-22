@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW2: Show when the data is as at – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 2 of 23 · Show when the data is as at</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Add a short stamp to every data page and report: the close of business the figures relate to, and when they will next be updated.</p></div>
+          <div><h2>Why</h2><p>The gilts in issue report notes that it runs for UK working days, but none of the data pages we looked at says when its figures were last updated or when they will change next. For people pricing or trading on these numbers, the timing is half of the information.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ02, idea 6) -->
+      <span class="caption">Quick win 2</span>
+      <h1 class="page-title">Show when the data is as at</h1>
+      <p class="page-intro">A "data as at" and "next update" line on every data page and report.</p>
+      <p class="proto-try"><strong>Try:</strong> Look for when the figures were last updated in each version.</p>
+
+      <!-- Today and proposed (RQ02) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <p>This section features several reports. The main report provides data on the <a href="#" class="today-link">gilts in issue</a> on a particular date including their first issue dates, redemption dates and the nominal amounts outstanding.</p><p class="mb-0">The <a href="#" class="today-link">issuance history report</a> provides all the dates on which each individual gilt has been issued.</p>
+          </div>
+          <p class="compare-cap">Gilts in Issue page today: no date anywhere in view.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <div class="stamp" role="note"><span><b>Data as at:</b> close of business, 30 September 2026</span><span><b>Next update:</b> 1 October 2026, after close of business</span></div><p>This section features several reports. The main report provides data on the <a href="#">gilts in issue</a> on a particular date including their first issue dates, redemption dates and the nominal amounts outstanding.</p>
+          </div>
+          <p class="compare-cap">The same page with an as-at stamp above the report links.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

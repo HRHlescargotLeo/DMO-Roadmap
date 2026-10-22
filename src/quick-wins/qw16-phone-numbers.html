@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW16: Write phone numbers one way – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 16 of 23 · Write phone numbers one way</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Set out contact details as a short list, write every phone number in the GOV.UK format (020 7862 6612), and say when the lines are open.</p></div>
+          <div><h2>Why</h2><p>The Local Authority Lending page says "Please call 0207 862 6612 or 020 7862 6613 for escalation only", with the two numbers written differently in the same sentence and no opening hours. The Contact page already writes numbers correctly, so this is mostly a matter of bringing the PWLB pages into line.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ16, idea 34) -->
+      <span class="caption">Quick win 16</span>
+      <h1 class="page-title">Write phone numbers one way</h1>
+      <p class="page-intro">Contact details set out clearly, with numbers in one format.</p>
+      <p class="proto-try"><strong>Try:</strong> Compare how the two PWLB numbers are written.</p>
+
+      <!-- Today and proposed (RQ16) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <p>Please email all enquiries to the PWLB team at pwlb@dmo.gov.uk</p><p class="mb-0">Please call 0207 862 6612 or 020 7862 6613 for escalation only.</p>
+          </div>
+          <p class="compare-cap">Local Authority Lending page today.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <dl class="summary-list mb-0"><div><dt>Email</dt><dd><a href="#">pwlb@dmo.gov.uk</a></dd></div><div><dt>Telephone (escalation only)</dt><dd>020 7862 6612<br>020 7862 6613</dd></div><div><dt>Opening hours</dt><dd>Monday to Friday, [hours to be confirmed]</dd></div></dl>
+          </div>
+          <p class="compare-cap">The same details, set out as a list.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

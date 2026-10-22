@@ -629,6 +629,47 @@
     });
   }
 
+
+  /* ----------------------------------------------------------------------
+     Quick wins: QW3 date input and QW7 publication defaults (RQ03, RQ07)
+     ---------------------------------------------------------------------- */
+  function initQwDate() {
+    var form = document.getElementById('qwd-form');
+    if (!form) return;
+    var summary = document.getElementById('qwd-errors');
+    var field = document.getElementById('qwd-field');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var d = $('#qwd-day').value.trim(), m = $('#qwd-month').value.trim(), y = $('#qwd-year').value.trim();
+      var errs = [];
+      if (!d && !m && !y) errs.push({ id: 'qwd-day', msg: 'Enter the date you want gilts in issue for', field: field });
+      else if (!d) errs.push({ id: 'qwd-day', msg: 'Date must include a day', field: field });
+      else if (!m) errs.push({ id: 'qwd-month', msg: 'Date must include a month', field: field });
+      else if (!/^\d{4}$/.test(y)) errs.push({ id: 'qwd-year', msg: 'Year must include 4 numbers', field: field });
+      if (!errs.length) {
+        var dt = new Date(+y, +m - 1, +d);
+        if (isNaN(dt) || dt.getDate() !== +d || dt.getMonth() !== +m - 1) errs.push({ id: 'qwd-day', msg: 'Date must be a real date', field: field });
+      }
+      showErrors(summary, errs);
+      if (!errs.length) toast('Sample: the report would show gilts in issue on ' + fmtDate(y + '-' + ('0' + m).slice(-2) + '-' + ('0' + d).slice(-2)));
+    });
+  }
+
+  function initQwPubs() {
+    var period = document.getElementById('qwp-period');
+    if (!period) return;
+    var q = document.getElementById('qwp-q');
+    var out = document.getElementById('qwp-count');
+    var counts = { '3': 118, '12': 412, 'fy': 236, 'all': 9874 }; /* sample counts */
+    function render() {
+      var n = counts[period.value];
+      if (q.value.trim()) n = Math.max(1, Math.round(n / 9));
+      out.innerHTML = '<b>Showing 1 to ' + Math.min(20, n) + ' of ' + num(n) + ' publications</b>, newest first' + (q.value.trim() ? ', matching "' + esc(q.value.trim()) + '"' : '');
+    }
+    period.addEventListener('change', render);
+    q.addEventListener('input', render);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initGilts();
     initCatalogue();
@@ -640,5 +681,7 @@
     initEligibility();
     initGiltValue();
     initPwlb();
+    initQwDate();
+    initQwPubs();
   });
 })();

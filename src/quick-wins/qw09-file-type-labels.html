@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW9: Say the file type on every link – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 9 of 23 · Say the file type on every link</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Show the format and size next to every document link, "PDF, 96.8KB", as the GOV.UK attachment pattern does, and say when a document isn't fully accessible.</p></div>
+          <div><h2>Why</h2><p>The Publications table shows the size of each file but not its format. Every title opens a PDF, which on a phone or with a screen reader is worth knowing before you tap it.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ09, idea 21) -->
+      <span class="caption">Quick win 9</span>
+      <h1 class="page-title">Say the file type on every link</h1>
+      <p class="page-intro">Each publication link says it opens a PDF, and how big the file is.</p>
+      <p class="proto-try"><strong>Try:</strong> Work out which of these links opens a PDF in each version.</p>
+
+      <!-- Today and proposed (RQ09) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <div class="table-wrap"><table class="data-table today-table"><tbody><tr><td>Publication title</td><td>Size</td><td>Date published</td></tr><tr><td><a href="#" class="today-link">DMO seeks views on the scheduling of a programmatic gilt tender on Wednesday 7 October for a conventional gilt</a></td><td>96.8KB</td><td>30-September-2026</td></tr><tr><td><a href="#" class="today-link">Auction of £1,250 million of 1⅛% Index-linked Treasury Gilt 2035</a></td><td>123.5KB</td><td>29-September-2026</td></tr><tr><td><a href="#" class="today-link">Result of the Sale By Auction of £4,250 million of 4⅞% Treasury Gilt 2036</a></td><td>67.2KB</td><td>29-September-2026</td></tr></tbody></table></div>
+          </div>
+          <p class="compare-cap">Publications today: a size column, but no format.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <div class="table-wrap"><table class="data-table"><caption>Publications, newest first</caption><thead><tr><th scope="col">Publication</th><th scope="col">Published</th></tr></thead><tbody><tr><th scope="row"><a href="#">DMO seeks views on the scheduling of a programmatic gilt tender on Wednesday 7 October for a conventional gilt</a> <span class="wf-meta">(PDF, 96.8KB)</span></th><td>30 September 2026</td></tr><tr><th scope="row"><a href="#">Auction of £1,250 million of 1⅛% Index-linked Treasury Gilt 2035</a> <span class="wf-meta">(PDF, 123.5KB)</span></th><td>29 September 2026</td></tr><tr><th scope="row"><a href="#">Result of the Sale By Auction of £4,250 million of 4⅞% Treasury Gilt 2036</a> <span class="wf-meta">(PDF, 67.2KB)</span></th><td>29 September 2026</td></tr></tbody></table></div>
+          </div>
+          <p class="compare-cap">Format and size beside each title.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW19: A visible focus state – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 19 of 23 · A visible focus state</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Apply the GOV.UK focus state (a yellow highlight with a dark underline) to every link, button and form field, and test it at 200% and 400% zoom.</p></div>
+          <div><h2>Why</h2><p>The accessibility statement itself notes that keyboard focus on the search button disappears at 200% zoom. Keyboard users need to see where they are on the page at all times, and the yellow focus state is one of the most tested parts of the GOV.UK Design System.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ19, idea 38) -->
+      <span class="caption">Quick win 19</span>
+      <h1 class="page-title">A visible focus state</h1>
+      <p class="page-intro">The GOV.UK yellow focus state on every link, button and field.</p>
+      <p class="proto-try"><strong>Try:</strong> Click inside each panel, then press Tab a few times.</p>
+
+      <!-- Today and proposed (RQ19) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <div class="today-nofocus"><div class="row"><label class="visually-hidden" for="qwt-s">Search dmo.gov.uk</label><input type="search" id="qwt-s" placeholder="Search dmo.gov.uk"><button type="button" class="btn">Search</button></div><p class="mb-0"><a href="#" class="today-link">Gilts in issue</a> · <a href="#" class="today-link">Gilt operations</a> · <a href="#" class="today-link">PWLB rates</a></p></div>
+          </div>
+          <p class="compare-cap">Today: focus is hard or impossible to see.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <div class="row"><label class="visually-hidden" for="qwp-s">Search dmo.gov.uk</label><input type="search" id="qwp-s" placeholder="Search dmo.gov.uk"><button type="button" class="btn">Search</button></div><p class="mb-0"><a href="#">Gilts in issue</a> · <a href="#">Gilt operations</a> · <a href="#">PWLB rates</a></p>
+          </div>
+          <p class="compare-cap">The GOV.UK yellow focus state.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>

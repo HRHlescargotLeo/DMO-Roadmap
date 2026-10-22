@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW8: Tidy the publication type list – UK DMO prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-tab="qw">
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 8 of 23 · Tidy the publication type list</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Group the publication types under the area they belong to, and list each one once within its group, so the menu reads as a set of choices rather than a database export.</p></div>
+          <div><h2>Why</h2><p>The Publication type menu has 31 options in one long list. "Annual Reports and Accounts" appears three times, and "Consultation Papers", "Formulae and Examples" and "Operational Rules" twice each, with nothing to say which is which.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ08, idea 18) -->
+      <span class="caption">Quick win 8</span>
+      <h1 class="page-title">Tidy the publication type list</h1>
+      <p class="page-intro">Publication types grouped under their area, each listed once.</p>
+      <p class="proto-try"><strong>Try:</strong> Open both menus and look for "Annual Reports and Accounts".</p>
+
+      <!-- Today and proposed (RQ08) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <label for="qwt-types">Publication type</label><select id="qwt-types"><option>Please select a publication type</option><option>Corporate Governance</option><option>Annual Reports and Accounts</option><option>Consultation Meetings</option><option>Debt Management Reports</option><option>Remit Announcements</option><option>Auction Press Notices</option><option>Allocation and Impact Reports</option><option>Coupon Fixing Announcements</option><option>Gilt Tender Announcements</option><option>Other Press Notices / Operational Announcements</option><option>Screen Announcements</option><option>Syndication Press Notices</option><option>Auctions</option><option>Other Operational Announcements</option><option>Syndications</option><option>Tenders</option><option>Annual Reports and Accounts</option><option>Announcements</option><option>Cash Management Reports</option><option>Consultation Papers</option><option>Operational Notices</option><option>Annual Reports and Accounts</option><option>Annual Reviews</option><option>Consultation Papers</option><option>Formulae and Examples</option><option>Investor Guides</option><option>Operational Rules</option><option>Quarterly Reviews</option><option>Formulae and Examples</option><option>Operational Rules</option></select>
+          </div>
+          <p class="compare-cap">Publications today: 31 options, four of them repeated.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <label for="qwp-types">Publication type</label><select id="qwp-types"><option>All publication types</option><optgroup label="Gilt market announcements"><option>Auction announcements</option><option>Syndication announcements</option><option>Tender announcements</option><option>Coupon fixing announcements</option><option>Screen announcements</option><option>Other operational announcements</option></optgroup><optgroup label="Gilt prospectuses"><option>Auction prospectuses</option><option>Syndication prospectuses</option><option>Tender prospectuses</option></optgroup><optgroup label="Financing remit"><option>Remit announcements</option><option>Debt management reports</option></optgroup><optgroup label="Green gilts"><option>Allocation and impact reports</option></optgroup><optgroup label="Money markets"><option>Announcements</option><option>Cash management reports</option><option>Operational notices</option></optgroup><optgroup label="Reviews and guides"><option>Annual reviews</option><option>Quarterly reviews</option><option>Investor guides</option><option>Formulae and examples</option><option>Operational rules</option></optgroup><optgroup label="Consultations"><option>Consultation papers</option><option>Consultation meetings</option></optgroup><optgroup label="Corporate governance"><option>Annual reports and accounts</option><option>Corporate governance</option></optgroup></select>
+          </div>
+          <p class="compare-cap">The same types grouped by area. The grouping is our suggestion.</p>
+        </section>
+      </div>
+      <div class="wf-note query" data-note="1"><span class="wf-note-label">Question for the DMO</span>We have guessed at which area some types belong to, for example whether "Auctions" means prospectuses. The grouping needs checking with whoever tags the publications.</div>
+      <p class="qw-back"><a href="~/quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+</body>
+</html>
