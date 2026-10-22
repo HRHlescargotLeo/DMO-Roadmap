@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW1: CSV and open-format downloads – UK DMO prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body data-tab="qw">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Prototype navigator (replaces the DMO's own header, R01). Two tabs: big improvements and quick wins (RQ00). -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="UK DMO prototypes, overview">UK DMO <span>prototypes</span></a>
+      <nav class="proto-tabs" aria-label="Prototype sets">
+        <a href="../index.html" data-proto-tab="big">Big improvements</a>
+        <a href="../quick-wins/index.html" data-proto-tab="qw">Quick wins</a>
+      </nav>
+      <nav class="proto-set" data-proto-set="big" aria-label="Big improvements">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/gilts-in-issue.html" data-proto="gilts-in-issue data-catalogue"><span class="n">1</span> Gilt market data</a></li>
+          <li><a href="../pages/gilt-operation.html" data-proto="gilt-operation operations-calendar alerts"><span class="n">2</span> Gilt operations</a></li>
+          <li><a href="../pages/remit.html" data-proto="remit home"><span class="n">3</span> Remit at a glance</a></li>
+          <li><a href="../pages/buying-gilts.html" data-proto="buying-gilts check-eligibility gilt-value"><span class="n">4</span> Buying gilts</a></li>
+          <li><a href="../pages/pwlb-rates.html" data-proto="pwlb-rates pwlb-apply"><span class="n">5</span> PWLB rates</a></li>
+        </ul>
+      </nav>
+      <nav class="proto-set" data-proto-set="qw" aria-label="Quick wins" hidden>
+        <ul class="proto-links qw-links">
+          <li><a href="../quick-wins/index.html" data-proto="index">Overview</a></li>
+          <li><a href="../quick-wins/qw01-csv-downloads.html" data-proto="qw01-csv-downloads" data-label="QW1 CSV and open-format downloads">QW1<span class="visually-hidden"> CSV and open-format downloads</span></a></li>
+          <li><a href="../quick-wins/qw02-as-at-stamp.html" data-proto="qw02-as-at-stamp" data-label="QW2 Show when the data is as at">QW2<span class="visually-hidden"> Show when the data is as at</span></a></li>
+          <li><a href="../quick-wins/qw03-date-input.html" data-proto="qw03-date-input" data-label="QW3 A GOV.UK date input on report pages">QW3<span class="visually-hidden"> A GOV.UK date input on report pages</span></a></li>
+          <li><a href="../quick-wins/qw04-remit-figures.html" data-proto="qw04-remit-figures" data-label="QW4 The remit figures on the Remit page">QW4<span class="visually-hidden"> The remit figures on the Remit page</span></a></li>
+          <li><a href="../quick-wins/qw05-next-operations.html" data-proto="qw05-next-operations" data-label="QW5 Next operations on the homepage">QW5<span class="visually-hidden"> Next operations on the homepage</span></a></li>
+          <li><a href="../quick-wins/qw06-consultation-banner.html" data-proto="qw06-consultation-banner" data-label="QW6 A banner for live consultations">QW6<span class="visually-hidden"> A banner for live consultations</span></a></li>
+          <li><a href="../quick-wins/qw07-publication-defaults.html" data-proto="qw07-publication-defaults" data-label="QW7 Sensible defaults on Publications">QW7<span class="visually-hidden"> Sensible defaults on Publications</span></a></li>
+          <li><a href="../quick-wins/qw08-publication-types.html" data-proto="qw08-publication-types" data-label="QW8 Tidy the publication type list">QW8<span class="visually-hidden"> Tidy the publication type list</span></a></li>
+          <li><a href="../quick-wins/qw09-file-type-labels.html" data-proto="qw09-file-type-labels" data-label="QW9 Say the file type on every link">QW9<span class="visually-hidden"> Say the file type on every link</span></a></li>
+          <li><a href="../quick-wins/qw10-table-markup.html" data-proto="qw10-table-markup" data-label="QW10 Mark up the Publications table properly">QW10<span class="visually-hidden"> Mark up the Publications table properly</span></a></li>
+          <li><a href="../quick-wins/qw11-date-style.html" data-proto="qw11-date-style" data-label="QW11 One date style">QW11<span class="visually-hidden"> One date style</span></a></li>
+          <li><a href="../quick-wins/qw12-money-laundering-reference.html" data-proto="qw12-money-laundering-reference" data-label="QW12 Update the money laundering reference">QW12<span class="visually-hidden"> Update the money laundering reference</span></a></li>
+          <li><a href="../quick-wins/qw13-drafting-text.html" data-proto="qw13-drafting-text" data-label="QW13 Remove the drafting brackets">QW13<span class="visually-hidden"> Remove the drafting brackets</span></a></li>
+          <li><a href="../quick-wins/qw14-terms-in-place.html" data-proto="qw14-terms-in-place" data-label="QW14 Explain terms where they appear">QW14<span class="visually-hidden"> Explain terms where they appear</span></a></li>
+          <li><a href="../quick-wins/qw15-link-text.html" data-proto="qw15-link-text" data-label="QW15 Descriptive link text">QW15<span class="visually-hidden"> Descriptive link text</span></a></li>
+          <li><a href="../quick-wins/qw16-phone-numbers.html" data-proto="qw16-phone-numbers" data-label="QW16 Write phone numbers one way">QW16<span class="visually-hidden"> Write phone numbers one way</span></a></li>
+          <li><a href="../quick-wins/qw17-accessibility-statement.html" data-proto="qw17-accessibility-statement" data-label="QW17 An up-to-date accessibility statement">QW17<span class="visually-hidden"> An up-to-date accessibility statement</span></a></li>
+          <li><a href="../quick-wins/qw18-underline-links.html" data-proto="qw18-underline-links" data-label="QW18 Underline links">QW18<span class="visually-hidden"> Underline links</span></a></li>
+          <li><a href="../quick-wins/qw19-focus-state.html" data-proto="qw19-focus-state" data-label="QW19 A visible focus state">QW19<span class="visually-hidden"> A visible focus state</span></a></li>
+          <li><a href="../quick-wins/qw20-navigation-markup.html" data-proto="qw20-navigation-markup" data-label="QW20 Plain navigation markup">QW20<span class="visually-hidden"> Plain navigation markup</span></a></li>
+          <li><a href="../quick-wins/qw21-page-headings.html" data-proto="qw21-page-headings" data-label="QW21 An H1 that names the page">QW21<span class="visually-hidden"> An H1 that names the page</span></a></li>
+          <li><a href="../quick-wins/qw22-type-scale.html" data-proto="qw22-type-scale" data-label="QW22 A clear type scale">QW22<span class="visually-hidden"> A clear type scale</span></a></li>
+          <li><a href="../quick-wins/qw23-homepage-title.html" data-proto="qw23-homepage-title" data-label="QW23 Name the homepage">QW23<span class="visually-hidden"> Name the homepage</span></a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 1 of 23 · CSV and open-format downloads</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Add CSV and OpenDocument (ODS) to every data report, label each download with its format and size, and drop Word for tables of figures. The report pages themselves stay as they are.</p></div>
+          <div><h2>Why</h2><p>The gilts in issue report offers PDF, Excel and Word. Word is an odd place to put a table of numbers, and CSV, which the Help page lists among the formats the site supports, isn't offered. Government's open standards expect data to be published in CSV or ODF, so this is as much about meeting the standard as about convenience.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container">
+      <!-- Quick win heading (RQ01, idea 2) -->
+      <span class="caption">Quick win 1</span>
+      <h1 class="page-title">CSV and open-format downloads</h1>
+      <p class="page-intro">Every data report offers CSV and OpenDocument alongside Excel, with format and size on each link.</p>
+      <p class="proto-try"><strong>Try:</strong> Compare the two sets of download options.</p>
+
+      <!-- Today and proposed (RQ01) -->
+      <div class="compare">
+        <section class="compare-col today" aria-labelledby="today-h">
+          <h2 class="compare-label" id="today-h">Today</h2>
+          <div class="compare-frame">
+            <p class="mb-0"><b>Export options</b></p><div class="today-export"><button type="button" class="btn">PDF</button><button type="button" class="btn">Excel</button><button type="button" class="btn">Word</button></div>
+          </div>
+          <p class="compare-cap">Report D1A: three buttons, format only.</p>
+        </section>
+        <section class="compare-col proposed" aria-labelledby="proposed-h">
+          <h2 class="compare-label" id="proposed-h">Proposed</h2>
+          <div class="compare-frame">
+            <h3 class="qw-h">Download this data</h3><ul class="downloads">
+<li><a href="#" data-toast="Sample: CSV download.">Gilts in issue, 30 September 2026 (CSV, 4KB)</a></li>
+<li><a href="#" data-toast="Sample: ODS download.">Gilts in issue, 30 September 2026 (ODS, 12KB)</a></li>
+<li><a href="#" data-toast="Sample: Excel download.">Gilts in issue, 30 September 2026 (Excel XLSX, 14KB)</a></li>
+<li><a href="#" data-toast="Sample: PDF download.">Gilts in issue, 30 September 2026 (PDF, 88KB)</a></li></ul>
+          </div>
+          <p class="compare-cap">Downloads named, with format and size. Word is gone; CSV and ODS are added.</p>
+        </section>
+      </div>
+      
+      <p class="qw-back"><a href="../quick-wins/index.html">All quick wins</a></p>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the DMO's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Figures marked "sample" are illustrative, not DMO data</p>
+    </div>
+  </footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/dmo.js"></script>
+
+</body>
+</html>

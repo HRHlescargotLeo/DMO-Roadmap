@@ -1,6 +1,6 @@
-# UK Debt Management Office — website improvement prototypes (V2)
+# UK Debt Management Office — website improvement prototypes
 
-Five clickable prototypes for improvements to dmo.gov.uk, prepared by ClerksWell following the phase 1 review (1 October 2026). The DMO design layer (Lato, charcoal, the red heading rule, square corners, GOV.UK yellow focus) lives entirely in `src/css/theme.css`; delete that file to get the greyscale prototypes back. Lato and Roboto Mono are self-hosted in `src/assets/fonts` (SIL Open Font Licence), as the DMO self-hosts Lato. The DMO logo is drawn as a text wordmark with the red rule; the Royal Arms is not reproduced. There is no photography: the DMO site uses almost none, so none was added.
+A clickable model of improvements to dmo.gov.uk in two tabs: five big improvements, and 23 quick wins that can each be done on their own. The DMO design layer (Lato, charcoal, the red heading rule, square corners, GOV.UK yellow focus) lives entirely in `src/css/theme.css`; delete that file to get the greyscale prototypes back. Lato and Roboto Mono are self-hosted in `src/assets/fonts` (SIL Open Font Licence), as the DMO self-hosts Lato. The DMO logo is drawn as a text wordmark with the red rule; the Royal Arms is not reproduced. There is no photography: the DMO site uses almost none, so none was added.
 
 Every page follows GOV.UK Design System patterns (date input, error summary, tables, summary lists, step-by-step, question pages, notification banner) and targets WCAG 2.2 AA.
 
@@ -19,6 +19,8 @@ GitHub Pages publishes from the `docs/` folder on `main`
 4. Buying gilts — `pages/buying-gilts.html`, `pages/check-eligibility.html`, `pages/gilt-value.html` (`?gilt=<id>`)
 5. PWLB rates — `pages/pwlb-rates.html`, `pages/pwlb-apply.html`
 
+Quick wins: `quick-wins/index.html` (overview) and `quick-wins/qw01-…html` to `qw23-…html`, each a standalone Today / Proposed demo. The navigator and landing pages switch between the two tabs; `<body data-tab="qw">` marks a quick-win page.
+
 Module library: `modules/library.html`. Requirements (R-numbers mapped to phase 1 idea numbers): `requirements/requirements.md`.
 
 ## Data
@@ -31,4 +33,4 @@ node build-includes.js && node validate.js
 Edit files in `src/`; `docs/` is generated (commit it, as GitHub Pages serves it). The prototype navigator (top bar with the Notes switch) and the previous/next footer live in `src/includes/`. Shared behaviour is in `src/js/wireframe.js`; DMO-specific behaviour in `src/js/dmo.js`.
 
 ## Status
-V2, designed prototypes for internal review (V1 was greyscale). The DMO's own header and footer are replaced by a prototype navigator. Notes are off by default; switch "Notes on" in the top bar to show what each prototype proposes and why, plus in-page annotations (yellow for behaviour, red for open questions for the DMO).
+Designed model, both tabs. Pages carry no version, date or authorship metadata (house rule); version history lives in the project summary docs only. Notes are off by default; switch "Notes on" in the top bar to show what each prototype or quick win proposes and why, plus in-page annotations (yellow for behaviour, red for open questions for the DMO).

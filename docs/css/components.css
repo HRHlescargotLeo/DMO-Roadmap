@@ -340,8 +340,8 @@ body.hub section { margin: 3rem 0; }
 .hub-footer { margin-top: 2rem; padding: 1.5rem 0; font-size: 0.875rem; color: var(--wf-text-muted); }
 
 /* ==========================================================================
-   V1.2 — prototype navigator, notes switch and proposal panel
-   Replaces Get Living's own header and footer so the pack reads as a set of
+   Prototype navigator, notes switch and proposal panel
+   Replaces the client's own header and footer so the pack reads as a set of
    prototypes, not a copy of the site.
    ========================================================================== */
 .proto-nav { background: var(--wf-page); border-bottom: 1px solid var(--wf-border-strong); }
@@ -591,3 +591,80 @@ details.details .details-text { border-left: 5px solid var(--wf-border); padding
 [tabindex="-1"]:focus:not(.error-summary):not(.result-card) { outline: none; box-shadow: none; }
 .cat-list .tag { justify-self: start; }
 .ops-strip { margin-bottom: 1rem; }
+
+/* ==========================================================================
+   Two-tab model: big improvements and quick wins (RQ00)
+   ========================================================================== */
+.proto-tabs { display: flex; gap: 0.25rem; flex: none; }
+.proto-tabs a { padding: 0.35rem 0.7rem; border: 1px solid var(--wf-border-strong); border-radius: var(--wf-radius); color: var(--wf-text); font-size: 0.875rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.proto-tabs a[aria-current] { background: var(--wf-text); color: var(--wf-page); border-color: var(--wf-text); }
+.proto-set[hidden] { display: none; }
+.proto-set { flex: 1; min-width: 0; }
+.qw-links a { padding-left: 0.4rem; padding-right: 0.4rem; }
+@media (max-width: 1280px) { .proto-tabs { order: 2; } .proto-set { order: 3; flex-basis: 100%; } }
+.hub-tabs { display: flex; gap: 0; margin: 0 0 1.75rem; border-bottom: 1px solid var(--wf-border-strong); flex-wrap: wrap; }
+.hub-tabs a { padding: 0.6rem 1.1rem; text-decoration: none; color: var(--wf-text); font-weight: 600; border-bottom: 4px solid transparent; margin-bottom: -1px; }
+.hub-tabs a[aria-current] { border-bottom-color: var(--wf-text); }
+
+/* Quick wins overview */
+.qw-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
+.qw-card { border: 1px solid var(--wf-border); border-radius: var(--wf-radius); padding: 1.25rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+.qw-card h3 { font-size: 1.125rem; margin: 0.25rem 0 0; }
+.qw-card p { margin: 0; font-size: 0.9375rem; }
+.qw-card .btn { margin-top: auto; }
+.qw-card .proto-num { width: auto; min-width: 2.75rem; padding: 0 0.5rem; border-radius: 999px; }
+.qw-back { margin-top: 2rem; }
+
+/* Today / proposed comparison */
+.compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 1.5rem 0; align-items: start; }
+@media (max-width: 900px) { .compare { grid-template-columns: minmax(0, 1fr); } }
+.compare-col { margin: 0; min-width: 0; }
+.compare-label { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+.compare-frame { border: 1px solid var(--wf-border-strong); border-radius: var(--wf-radius); padding: 1.25rem; background: var(--wf-page); min-width: 0; display: grid; gap: 0.75rem; }
+.compare-frame > * { margin-top: 0; }
+.today .compare-frame { border-style: dashed; }
+.compare-cap { font-size: 0.875rem; color: var(--wf-text-muted); margin: 0.5rem 0 0; }
+.qw-h { font-size: 1.125rem; margin: 0; }
+.qw-h1 { font-size: 2.25rem; font-weight: 600; margin: 0; }
+.qw-ops { grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+
+/* Rebuilt "today" treatments, as seen on the live site */
+.today-link, .today-link:visited { color: var(--wf-text); text-decoration: none; }
+.today-link-u, .today-link-u:visited { color: var(--wf-text); text-decoration: none; }
+.today-export { display: flex; gap: 4px; flex-wrap: wrap; }
+.today-export .btn { flex: 1; min-width: 5rem; font-weight: 400; box-shadow: none; }
+.today-date { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.today-date label { font-weight: 400; margin: 0; }
+.today-date input { width: 11rem; border: 1px solid #808080 !important; height: 2rem !important; padding: 2px 6px !important; }
+.today-cal { font-size: 1.5rem; line-height: 1; }
+.today-list { padding-left: 1.25rem; display: grid; gap: 0.4rem; margin: 0; }
+.today-tabs { display: flex; gap: 4px; }
+.today-tabs span { padding: 0.5rem 0.9rem; font-weight: 700; background: var(--wf-placeholder); }
+.today-tabs span.on { background: var(--wf-page); border: 1px solid var(--wf-border); }
+.today-filters { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: flex-end; }
+.today-filters select { width: auto; }
+.today-filters label { font-weight: 400; }
+.today-table td { font-weight: 400; }
+.today-crumb { font-size: 0.875rem; color: var(--wf-text-muted); margin: 0; }
+.today-h1, .today-h22 { font-size: 22px; font-weight: 700; margin: 0; line-height: 1.4; }
+.today-p24 { font-size: 24px; line-height: 1.4; }
+.today-nofocus a:focus, .today-nofocus button:focus, .today-nofocus input:focus,
+.today-nofocus a:focus-visible, .today-nofocus button:focus-visible, .today-nofocus input:focus-visible { outline: none !important; box-shadow: none !important; background: transparent; color: inherit !important; }
+.today-nofocus .btn:focus-visible { background: var(--wf-action) !important; color: #fff !important; }
+.sr-says { font-size: 0.9375rem; padding: 0.5rem 0.75rem; background: var(--wf-surface); border-left: 4px solid var(--wf-border-strong); }
+.sr-list { list-style: none; display: grid; gap: 0.4rem; margin: 0; font-size: 0.9375rem; }
+.sr-list li { padding: 0.5rem 0.75rem; background: var(--wf-surface); border-left: 4px solid var(--wf-border-strong); }
+.mock-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; padding: 0.6rem 0.9rem; background: var(--wf-text); color: var(--wf-page); font-weight: 700; font-size: 0.875rem; }
+.mock-tab { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid var(--wf-border-strong); border-bottom: 0; border-radius: 8px 8px 0 0; background: var(--wf-surface); font-size: 0.9375rem; max-width: 100%; justify-self: start; }
+.mock-fav { width: 14px; height: 14px; border-radius: 3px; background: var(--wf-border-strong); flex: none; }
+mark { background: var(--wf-note-bg); padding: 0 0.15rem; }
+.proto-links { position: relative; } .proto-links a { position: relative; }
+/* The quick-wins set has 24 links, so it always takes its own row */
+body[data-tab="qw"] .proto-nav-row { flex-wrap: wrap; }
+body[data-tab="qw"] .proto-tabs { order: 2; }
+body[data-tab="qw"] .notes-toggle { order: 3; margin-left: auto; }
+body[data-tab="qw"] .proto-set { order: 4; flex-basis: 100%; }
+body[data-tab="qw"] .proto-links a { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+body[data-tab="qw"] .proto-nav-row { padding-top: 0.6rem; row-gap: 0.25rem; }
+body[data-tab="qw"] .proto-links { gap: 0; }
+body[data-tab="qw"] .qw-links a { padding-left: 0.32rem; padding-right: 0.32rem; font-size: 0.8125rem; }

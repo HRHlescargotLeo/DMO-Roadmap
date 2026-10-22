@@ -1,9 +1,9 @@
 /* ==========================================================================
-   theme.css — the DMO design layer (V2)
+   theme.css — the DMO design layer
 
    Everything visual lives here. Delete this file and the pack returns to the
-   greyscale prototypes. Values come from the phase 1 design system, measured
-   from dmo.gov.uk on 1 October 2026: Lato, ink #191919, charcoal #303030,
+   greyscale prototypes. Values come from the DMO design system, measured
+   from the live dmo.gov.uk stylesheet: Lato, ink #191919, charcoal #303030,
    red #BE2D1A, ground #F8F8F8, square corners. GOV.UK pattern additions are
    the yellow focus state, darker red for hover, and #505A5F for secondary
    text (7:1 on white, where the live site's #6F777B is only 4.6:1).
@@ -88,7 +88,8 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, input:focus, 
 header.sticky.proto-nav { background: linear-gradient(var(--dmo-charcoal), var(--dmo-ink)); border-bottom: 0; color: #fff; }
 .proto-nav .proto-home, .proto-nav .proto-home:visited { color: #fff; font-weight: 700; border-left: 3px solid var(--dmo-red); padding-left: 0.6rem; line-height: 1.2; }
 .proto-nav .proto-home span { color: var(--dmo-mist); }
-.proto-nav .proto-links a, .proto-nav .proto-links a:visited { color: #fff; font-weight: 700; font-size: 0.9375rem; border-bottom-width: 4px; }
+.proto-nav .proto-links a, .proto-nav .proto-links a:visited { color: #fff; font-weight: 700; border-bottom-width: 4px; }
+.proto-nav .proto-links:not(.qw-links) a { font-size: 0.9375rem; }
 .proto-nav .proto-links a:hover { color: #fff; text-decoration: underline; text-decoration-thickness: 2px; }
 .proto-nav .proto-links a[aria-current="page"] { border-bottom-color: var(--dmo-red); }
 .proto-nav .proto-links .n { border-color: var(--dmo-mist); }
@@ -252,3 +253,28 @@ body.hub .wf-hub-meta span { border-color: var(--dmo-graphite); color: var(--dmo
 input[type="text"], input[type="email"], input[type="search"], input[type="number"], select { height: 2.75rem; min-height: 0; padding-top: 0; padding-bottom: 0; }
 .date-input .btn, .filter-panel .btn, .copy-row .btn, form.row .btn { height: 2.75rem; padding-top: 0; padding-bottom: 0; display: inline-flex; align-items: center; }
 .input-prefix span, .input-suffix span { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+
+/* Two-tab model ------------------------------------------------------------ */
+.proto-nav .proto-tabs a, .proto-nav .proto-tabs a:visited { color: #fff; border-color: var(--dmo-graphite); border-radius: 0; }
+.proto-nav .proto-tabs a[aria-current] { background: var(--dmo-red); border-color: var(--dmo-red); color: #fff; }
+.proto-nav .proto-tabs a:hover { border-color: #fff; }
+.hub-tabs { border-bottom-color: var(--dmo-graphite); }
+.hub-tabs a, .hub-tabs a:visited { color: #fff; }
+.hub-tabs a[aria-current] { border-bottom-color: var(--dmo-red); }
+.qw-card { border: 0; border-top: 4px solid var(--dmo-red); background: var(--dmo-ground); border-radius: 0; }
+.qw-card h3 a, .qw-card h3 a:visited { color: var(--dmo-charcoal); }
+.qw-card h3 a:hover { color: var(--dmo-red); }
+
+/* Today / proposed: both styled, so only the change differs ---------------- */
+.compare-label { color: var(--dmo-charcoal); border-bottom: 2px solid var(--dmo-mist); padding-bottom: 0.35rem; }
+.proposed .compare-label { border-bottom-color: var(--dmo-red); }
+.compare-frame { border: 1px solid var(--dmo-mist); border-radius: 0; }
+.today .compare-frame { border-style: solid; background: #fff; }
+.proposed .compare-frame { border-color: var(--dmo-rule); }
+.today-tabs span { background: rgba(25, 25, 25, 0.7); color: #fff; }
+.today-tabs span.on { background: #fff; color: var(--dmo-ink); border-color: var(--dmo-mist); }
+.mock-nav { background: linear-gradient(var(--dmo-charcoal), var(--dmo-ink)); }
+.mock-tab { border-radius: 6px 6px 0 0; }
+.sr-says, .sr-list li { background: var(--dmo-ground); border-left-color: var(--dmo-charcoal); }
+mark { background: #FFF7BF; color: var(--dmo-ink); }
+.today-h22, .today-h1 { color: var(--dmo-charcoal); font-family: var(--dmo-font); }
